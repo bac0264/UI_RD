@@ -13,9 +13,10 @@ public class _SlotListSetup<T,T1> : MonoBehaviour
     {
         if (slotList == null || slotList.Length == 0) slotList = GetComponentsInChildren<_ActionSlotSetup<T,T1>>();
     }
-    public virtual void Setup()
+    public virtual void Setup(T1[] dataBase = null)
     {
         if (slotList == null || slotList.Length == 0) slotList = GetComponentsInChildren<_ActionSlotSetup<T, T1>>();
+        if (dataBase != null) SetupSlotList(dataBase);
     }
     public virtual void SetupSlotList(T1[] dataBase)
     {

@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
-[SerializeField]
+[System.Serializable]
 public class ResourceStat : BaseStat
 {
     public enum TypeOfResource
@@ -9,14 +8,10 @@ public class ResourceStat : BaseStat
         GOLD,
         GEM,
     }
-    [System.NonSerialized]
-    public bool RESOURCE_CHECK;
-    public int RESOURCE_TYPE;
     public ResourceStat(long value, TypeOfResource typeOfResource) : base(value)
     {
-        this.RESOURCE_TYPE =(int) typeOfResource;
+        this.ID =(int) typeOfResource;
         NAME = "ResourceStat";
-        RESOURCE_CHECK = true;
         this.TYPE = (int)Type.Resource;
     }
 

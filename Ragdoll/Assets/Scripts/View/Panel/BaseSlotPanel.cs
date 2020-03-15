@@ -7,19 +7,11 @@ public class BaseSlotPanel : _PanelSetup<BaseSlot,BaseStat>
     public SOPrice price;
     private void Start()
     {
-        Setup();
-        if (price.priceList.Count > 0)
-        {
-            Debug.Log(price.priceList.Count);
-            DataSave<BaseStat> dataList = BacJson.FromJson<BaseStat, ResourceStat, ItemStat>(price.priceList[0].json);
-            
-            Debug.Log(BacJson.ToJson<BaseStat>(dataList));
-            SlotListManager.SetupSlotList(dataList.results.ToArray());
-        }
+
     }
-    public override void Setup()
+    public override void Setup(BaseStat[] database)
     {
-        base.Setup();
+        base.Setup(database);
     }
     public override void OnValidate()
     {

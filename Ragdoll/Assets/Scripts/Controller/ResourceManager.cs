@@ -7,43 +7,32 @@ using UnityEngine.UI;
 public class ResourceManager : IResourceManager
 {
     IDataService dataService;
-    List<ResourceStat> ResourceList;
-    public List<ResourceStat> RESOURCE_LIST
-    {
-        set
-        {
-            ResourceList = value;
-        }
-        get
-        {
-            return ResourceList;
-        }
-    }
+    DataSave<ResourceStat> dataSave;
     public ResourceManager(IDataService dataService)
     {
         this.dataService = dataService;
-        LoadAllResource();
+        LoadResources();
     }
 
-    public void SetupResourceForTheFirst()
+    public ResourceStat GetItemWithID(int id)
     {
-    }
-    public void LoadAllResource()
-    {
-       // RESOURCE_LIST = dataService.GetDataListWithType<BaseStat, ResourceStat>(dataService.GetDataSave());
-    }
-    public void SaveAllResource()
-    {
-        dataService.Save();
-    }
-    public ResourceStat GetResourceWithType(BaseStat.Type type)
-    {
-        for(int i = 0; i < RESOURCE_LIST.Count; i++)
-        {
-            if (RESOURCE_LIST[i].TYPE == (int) type) return RESOURCE_LIST[i];
-        }
+        if (id < dataSave.results.Count) return dataSave.results[id];
         return null;
     }
-    public void AddPrice(ResourceStat price) { 
+
+    public ResourceStat[] GetResourceList()
+    {
+        if (dataSave != null) return dataSave.results.ToArray();
+        return null;
+    }
+
+    public void LoadResources()
+    {
+        dataSave = dataService.GetDataSaveWithType<ResourceStat>();
+    }
+
+    public void SaveResources()
+    {
+        PlayerPrefs.SetString("ResourceStat", JsonUtility.ToJson(dataSave));
     }
 }

@@ -20,5 +20,23 @@ public class BaseStat
         this.VALUE = value;
         ID = 0;
     }
-    public virtual void addprice() { }
+    public virtual bool AddPrice() { return false; }
+    public virtual bool AddValue(long value)
+    {
+        if (value > 0)
+        {
+            VALUE += value;
+            return true;
+        }
+        else return false;
+    }
+    public virtual bool ReduceValue(long value)
+    {
+        if (value > 0 && VALUE - value >= 0)
+        {
+            VALUE -= value;
+            return true;
+        }
+        else return false;
+    }
 }

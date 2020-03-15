@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using System;
 
 public class DataService : IDataService
 {
@@ -12,15 +13,20 @@ public class DataService : IDataService
     {
         if (PlayerPrefs.GetInt("First", 0) == 0)
         {
-            //basestat_datasave = new datasave<basestat>();
-            //basestat_datasave.results.add(new resourcestat(1, resourcestat.typeofresource.gem));
-            //basestat_datasave.results.add(new resourcestat(2, resourcestat.typeofresource.gold));
-            //for (int i = 0; i < 20; i++)
-            //{
-            //    if (i % 3 == 0)
-            //        basestat_datasave.results.add(new itemstat(1, itemstat.typeofitem.armor, 0));
-            //    else if (i % 3 == 2) basestat_datasave.results.add(new basestat(2));
-            //}
+            ItemStat_DataSave = new DataSave<ItemStat>();
+            ResourceStat_DataSave = new DataSave<ResourceStat>();
+            int item_count = Enum.GetNames(typeof(ItemStat.TypeOfItem)).Length;
+            for (int i = 0; i < item_count; i++)
+            {
+                ItemStat item = new ItemStat(1, (ItemStat.TypeOfItem)i);
+                ItemStat_DataSave.results.Add(item);
+            }
+            int resource_count = Enum.GetNames(typeof(ResourceStat.TypeOfResource)).Length;
+            for (int i = 0; i < resource_count; i++)
+            {
+                ResourceStat resource = new ResourceStat(1, (ResourceStat.TypeOfResource)i);
+                ResourceStat_DataSave.results.Add(resource);
+            }
             Save();
             PlayerPrefs.SetInt("First", 1);
         }
@@ -44,7 +50,6 @@ public class DataService : IDataService
     {
         ItemStat_DataSave = JsonUtility.FromJson<DataSave<ItemStat>>(PlayerPrefs.GetString("ItemStat"));
         ResourceStat_DataSave = JsonUtility.FromJson<DataSave<ResourceStat>>(PlayerPrefs.GetString("ResourceStat"));
-        Debug.Log(PlayerPrefs.GetString("Data"));
     }
     public List<T1> GetDataListWithType<T, T1>(DataSave<T> data)
     {

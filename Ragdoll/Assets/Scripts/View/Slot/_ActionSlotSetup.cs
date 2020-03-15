@@ -2,11 +2,15 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 using System;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class _ActionSlotSetup<T,T1> : MonoBehaviour
 {
     private T1 data;
+    public Text TXT_VALUE;
+    public Image IMG_ICON;
+    public Image IMG_BG;
     public Action<_ActionSlotSetup<T, T1>> OnRightClickEvent;
     public virtual T1 DATA
     {

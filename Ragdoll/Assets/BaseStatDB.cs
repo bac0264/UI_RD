@@ -12,17 +12,17 @@ public class BaseStatDB : MonoBehaviour
     {
         if (Instance == null) Instance = this;
     }
-    public Sprite GetIcon(int TYPE, int TypeOfStat)
+    public Sprite GetIcon(int TYPE, int ID)
     {
         if (TYPE >= spriteList.Count) return null;
-        if (TypeOfStat >= spriteList[TYPE].sprites.Count) return null;
-        return spriteList[TYPE].sprites[TypeOfStat];
+        if (ID >= spriteList[TYPE].sprites.Count) return null;
+        return spriteList[TYPE].sprites[ID];
     }
-    public Sprite GetBackground(int type, int color = 0)
+    public Sprite GetBackground(int TYPE, int ID)
     {
-        if (type >= backgroundList.Count) return null;
-        if (color >= backgroundList[type].sprites.Count) return null;
-        return backgroundList[type].sprites[color];
+        if (TYPE >= backgroundList.Count) return null;
+        if (ID >= backgroundList[TYPE].sprites.Count) return null;
+        return backgroundList[TYPE].sprites[ID];
     }
 }
 [System.Serializable]

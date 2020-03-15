@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class ItemSlot : _ActionSlotSetup<ItemSlot, ItemStat>
 {
-    public Text TXT_VALUE;
-    public Image IMG_ICON;
-    public Image IMG_BG;
 
     public override ItemStat DATA { 
         get => base.DATA; set
@@ -15,8 +12,8 @@ public class ItemSlot : _ActionSlotSetup<ItemSlot, ItemStat>
             base.DATA = value;
 
             TXT_VALUE.text = DATA.VALUE.ToString();
-            IMG_ICON.sprite = BaseStatDB.Instance.GetIcon(DATA.ITEM_TYPE, DATA.ITEM_ID);
-            IMG_BG.sprite = BaseStatDB.Instance.GetBackground(DATA.ITEM_TYPE, DATA.ITEM_COLOR);
+            IMG_ICON.sprite = BaseStatDB.Instance.GetIcon(DATA.TYPE, DATA.ID);
+            IMG_BG.sprite = BaseStatDB.Instance.GetBackground(DATA.TYPE, DATA.ID);
         }
     
     }
