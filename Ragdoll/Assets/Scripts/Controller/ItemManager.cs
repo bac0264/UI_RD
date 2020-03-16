@@ -12,6 +12,12 @@ public class ItemManager : IItemManager
         LoadItems();
     }
 
+    public ItemStat[] GetItemList()
+    {
+        if (dataSave != null) return dataSave.results.ToArray();
+        return null;
+    }
+
     public ItemStat GetItemWithID(int id)
     {
         if (id < dataSave.results.Count) return dataSave.results[id];

@@ -20,10 +20,16 @@ public class _SlotListSetup<T,T1> : MonoBehaviour
     }
     public virtual void SetupSlotList(T1[] dataBase)
     {
-        for(int i = 0; i < dataBase.Length; i++)
+        int i = 0;
+        for(; i < dataBase.Length && i < slotList.Length; i++)
         {
             slotList[i].DATA = dataBase[i];
+            slotList[i].gameObject.SetActive(true);
             OnRightClick += slotList[i].OnRightClickEvent;
+        }
+        for(; i < slotList.Length; i++)
+        {
+            slotList[i].gameObject.SetActive(false);
         }
     }
 

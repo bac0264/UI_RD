@@ -22,8 +22,11 @@ public class DataService : IDataService
                 ItemStat_DataSave.results.Add(item);
             }
             int resource_count = Enum.GetNames(typeof(ResourceStat.TypeOfResource)).Length;
+            Debug.Log(resource_count);
             for (int i = 0; i < resource_count; i++)
             {
+                ResourceStat.TypeOfResource type = (ResourceStat.TypeOfResource)i;
+                Debug.Log(type);
                 ResourceStat resource = new ResourceStat(1, (ResourceStat.TypeOfResource)i);
                 ResourceStat_DataSave.results.Add(resource);
             }
@@ -45,11 +48,14 @@ public class DataService : IDataService
         string dataResource = JsonUtility.ToJson(ResourceStat_DataSave);
         PlayerPrefs.SetString("ItemStat", dataItem);
         PlayerPrefs.SetString("ResourceStat", dataResource);
+        Debug.Log(dataResource);
     }
     public void Load()
     {
         ItemStat_DataSave = JsonUtility.FromJson<DataSave<ItemStat>>(PlayerPrefs.GetString("ItemStat"));
         ResourceStat_DataSave = JsonUtility.FromJson<DataSave<ResourceStat>>(PlayerPrefs.GetString("ResourceStat"));
+        Debug.Log(PlayerPrefs.GetString("ResourceStat"));
+        Debug.Log(JsonUtility.ToJson(ResourceStat_DataSave));
     }
     public List<T1> GetDataListWithType<T, T1>(DataSave<T> data)
     {

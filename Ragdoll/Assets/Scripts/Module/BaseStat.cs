@@ -7,8 +7,6 @@ public class BaseStat
         Resource,
         ITEM,
     }
-    [System.NonSerialized]
-   // public Type type;
 
     public int ID;
     public string NAME;
