@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: Corbel_Red
+  m_Name: Corbel_Blue
   m_EditorClassIdentifier: 
-  hashCode: 853284793
+  hashCode: -1906955116
   material: {fileID: 5818119286491653904}
   materialHashCode: 1786819722
   m_Version: 1.1.0
@@ -5348,10 +5348,10 @@ Material:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
     - _EnvMatrixRotation: {r: 0, g: 0, b: 0, a: 0}
     - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
-    - _GlowColor: {r: 0.8490566, g: 0.6179088, b: 0.12415449, a: 1}
+    - _GlowColor: {r: 0, g: 0.64705884, b: 1, a: 1}
     - _MaskCoord: {r: 0, g: 0, b: 32767, a: 32767}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SpecularColor: {r: 1, g: 0.6850692, b: 0, a: 1}
+    - _SpecularColor: {r: 0, g: 0.64705884, b: 1, a: 1}
     - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.5}
