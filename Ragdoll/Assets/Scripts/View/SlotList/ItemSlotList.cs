@@ -7,8 +7,4 @@ public class ItemSlotList : _SlotListSetup<ItemSlot, ItemStat>
     {
         base.OnValidate();
     }
-    public override void SetupSlotList(ItemStat[] dataBase)
-    {
-        base.SetupSlotList(dataBase);
-    }
 }

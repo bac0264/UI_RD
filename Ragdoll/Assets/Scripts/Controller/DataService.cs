@@ -9,6 +9,7 @@ public class DataService : IDataService
     //DataSave<BaseStat> BaseStat_dataSave;
     DataSave<ItemStat> ItemStat_DataSave;
     DataSave<ResourceStat> ResourceStat_DataSave;
+    DataSave<CharacterStat> CharacterStat_DataSave;
     public DataService()
     {
         if (PlayerPrefs.GetInt("First", 0) == 0)
@@ -39,13 +40,15 @@ public class DataService : IDataService
     public DataSave<T> GetDataSaveWithType<T>()
     {
         if (typeof(T).ToString().Equals("ItemStat")) return (DataSave<T>)(object) ItemStat_DataSave;
-        else if(typeof(T).ToString().Equals("ResourceStat")) return (DataSave<T>)(object)ResourceStat_DataSave;
+        else if(typeof(T).ToString().Equals("ResourceStat")) return (DataSave<T>)(object) ResourceStat_DataSave;
+        else if (typeof(T).ToString().Equals("CharacterStat")) return (DataSave<T>)(object) CharacterStat_DataSave;
         return null;
     }
     public void Save()
     {
         string dataItem = JsonUtility.ToJson(ItemStat_DataSave);
         string dataResource = JsonUtility.ToJson(ResourceStat_DataSave);
+        string dataCahracter = JsonUtility.ToJson(CharacterStat_DataSave);
         PlayerPrefs.SetString("ItemStat", dataItem);
         PlayerPrefs.SetString("ResourceStat", dataResource);
         Debug.Log(dataResource);
@@ -54,6 +57,7 @@ public class DataService : IDataService
     {
         ItemStat_DataSave = JsonUtility.FromJson<DataSave<ItemStat>>(PlayerPrefs.GetString("ItemStat"));
         ResourceStat_DataSave = JsonUtility.FromJson<DataSave<ResourceStat>>(PlayerPrefs.GetString("ResourceStat"));
+        CharacterStat_DataSave = JsonUtility.FromJson<DataSave<CharacterStat>>(PlayerPrefs.GetString("CharacterStat"));
         Debug.Log(PlayerPrefs.GetString("ResourceStat"));
         Debug.Log(JsonUtility.ToJson(ResourceStat_DataSave));
     }

@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BaseSlotList : _SlotListSetup<BaseSlot, BaseStat>
+public class CharacterSlotList : _SlotListSetup<CharacterSlot, CharacterStat>
 {
     public override void OnValidate()
     {
         base.OnValidate();
     }
-    public override void Setup(BaseStat[] dataBase = null)
+    public override void Setup(CharacterStat[] dataBase = null)
     {
         base.Setup(dataBase);
     }

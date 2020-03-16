@@ -7,8 +7,8 @@ public class ResourceSlotList : _SlotListSetup<ResourceSlot, ResourceStat>
     {
         base.OnValidate();
     }
-    public override void SetupSlotList(ResourceStat[] dataBase)
+    public override void Setup(ResourceStat[] dataBase = null)
     {
-        base.SetupSlotList(dataBase);
+        base.Setup(dataBase);
     }
 }
