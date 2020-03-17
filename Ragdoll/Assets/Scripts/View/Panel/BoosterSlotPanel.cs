@@ -13,10 +13,6 @@ public class BoosterSlotPanel : _PanelSetup<BoosterSlot, BoosterStat>
     {
         SlotListManager.OnRightClick += ShowBooster;
     }
-    public override void OnValidate()
-    {
-        base.OnValidate();
-    }
     public override void Setup(BoosterStat[] dataBase = null)
     {
         base.Setup(dataBase);

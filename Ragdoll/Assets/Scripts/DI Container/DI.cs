@@ -22,11 +22,15 @@ public class DIContainer
 
     private static void SetModule(Type interfaceType, Type moduleType)
     {
+        if (ResgisteredModules.ContainsKey(interfaceType))
+        {
+            ResgisteredModules.Remove(interfaceType);
+        }
         //Kiểm tra module đã implement interface chưa
         if (!interfaceType.IsAssignableFrom(moduleType))
         {
             throw new Exception("Wrong Module type");
-            
+
         }
         //Tìm constructor đầu tiên
         var firstConstructor = moduleType.GetConstructors()[0];
@@ -60,11 +64,11 @@ public class DIContainer
 
     private static object GetModule(Type interfaceType)
     {
+
         if (ResgisteredModules.ContainsKey(interfaceType))
         {
             return ResgisteredModules[interfaceType];
         }
-        throw new Exception("Module not register");
+        throw new Exception(interfaceType + " Module not register");
     }
 }
-

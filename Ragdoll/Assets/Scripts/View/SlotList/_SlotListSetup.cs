@@ -20,6 +20,7 @@ public class _SlotListSetup<T,T1> : MonoBehaviour
     }
     void SetupSlotList(T1[] dataBase)
     {
+        if (dataBase == null) return;
         int i = 0;
         for(; i < dataBase.Length && i < slotList.Length; i++)
         {

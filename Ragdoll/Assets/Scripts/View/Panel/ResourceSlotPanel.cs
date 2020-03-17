@@ -10,10 +10,6 @@ public class ResourceSlotPanel : _PanelSetup<ResourceSlot, ResourceStat>
         Setup(resourceManager.GetResourceList());
     }
 
-    public override void OnValidate()
-    {
-        base.OnValidate();
-    }
     public override void Setup(ResourceStat[] database = null)
     {
         base.Setup(database);

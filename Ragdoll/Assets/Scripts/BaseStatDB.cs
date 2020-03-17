@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class BaseStatDB : MonoBehaviour
 {
     public static BaseStatDB Instance;
-    public List<IconList> spriteList;
+    public List<IconList> iconList;
     public List<BackgroundList> backgroundList;
 
     private void Awake()
@@ -14,9 +14,9 @@ public class BaseStatDB : MonoBehaviour
     }
     public Sprite GetIcon(int TYPE, int ID)
     {
-        if (TYPE >= spriteList.Count) return null;
-        if (ID >= spriteList[TYPE].sprites.Count) return null;
-        return spriteList[TYPE].sprites[ID];
+        if (TYPE >= iconList.Count) return null;
+        if (ID >= iconList[TYPE].sprites.Count) return null;
+        return iconList[TYPE].sprites[ID];
     }
     public Sprite GetBackground(int TYPE, int ID)
     {

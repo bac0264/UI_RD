@@ -13,10 +13,6 @@ public class CharacterSlotPanel : _PanelSetup<CharacterSlot, CharacterStat>
         characterManager = DIContainer.GetModule<ICharacterManager>();
         SlotListManager.Setup(characterManager.GetCharacterList());
     }
-    public override void OnValidate()
-    {
-        base.OnValidate();
-    }
     public override void Setup(CharacterStat[] dataBase = null)
     {
         base.Setup(dataBase);
