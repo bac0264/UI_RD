@@ -2,11 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public interface IItemManager
+public interface IBoosterManager
 {
-    ItemStat[] GetItemList();
-    ItemStat GetItemWithID(int id);
+    BoosterStat[] GetBoosterList();
+    BoosterStat GetBoosterWithID(int id);
 
-    void LoadItems();
-    void SaveItems();
+    void LoadBoosters();
+    void SaveBoosters();
 }

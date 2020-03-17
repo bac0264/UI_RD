@@ -10,6 +10,11 @@ public class CSVReader : MonoBehaviour
     //static string LINE_SPLIT_RE = @"\n|\r";
     static char[] TRIM_CHARS = { '\"' };
     static string comma = "|";
+    public static string ParseString(string input)
+    {
+        string output = input.Replace("[{", "{").Replace("}]", "}").Replace(';', ',').Replace("},", "}|").Replace('_','\"');
+        return output;
+    }
 
     public static List<Dictionary<string, string>> Read(TextAsset data)
     {

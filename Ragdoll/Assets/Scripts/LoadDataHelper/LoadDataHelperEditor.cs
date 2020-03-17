@@ -16,7 +16,7 @@ public class LoadDataHelperEditor : Editor
         if (GUILayout.Button("Load Data"))
         {
             myscript.LoadData();
-            EditorUtility.SetDirty(myscript.dataPrice);
+            EditorUtility.SetDirty(myscript.dataSpin);
         }
 
         base.OnInspectorGUI();

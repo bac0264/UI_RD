@@ -11,18 +11,9 @@ public class BaseSlot : _ActionSlotSetup<BaseSlot,BaseStat>
         {
             base.DATA = value;
 
-            TXT_VALUE.text = DATA.VALUE.ToString();
-
-            if (DATA is ItemStat)
-            {
-                DATA.TYPE = (int)BaseStat.Type.ITEM;
-            }
-            else if (DATA is ResourceStat)
-            {
-                DATA.TYPE = (int)BaseStat.Type.Resource;
-            }
-            IMG_ICON.sprite = BaseStatDB.Instance.GetIcon(DATA.TYPE, DATA.ID);
-            IMG_BG.sprite = BaseStatDB.Instance.GetBackground(DATA.TYPE, DATA.ID);
+            if(TXT_VALUE != null) TXT_VALUE.text = DATA.VALUE.ToString();
+            if(IMG_ICON != null) IMG_ICON.sprite = BaseStatDB.Instance.GetIcon(DATA.TYPE, DATA.ID);
+            if(IMG_BG != null) IMG_BG.sprite = BaseStatDB.Instance.GetBackground(DATA.TYPE, DATA.ID);
         }        
     }
     public override void OnPointerClick(PointerEventData eventData)

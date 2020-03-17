@@ -26,13 +26,15 @@ public class PopupFactory : MonoBehaviour
         if (container == null) container = GameObject.FindGameObjectWithTag(KeySave.CONTAINER_POPUP).transform;
     }
 
-    public bool ShowPopup(BasePopup.TypeOfPopup type, string message = null, BaseSlot slot = null )
+    public bool ShowPopup<T,T1>(BasePopup.TypeOfPopup type, string message = null, _ActionSlotSetup<T,T1> slot = null)
     {
         if (PopupList.ContainsKey(type.ToString()))
         {
-            return PopupList[type.ToString()];
+            BasePopup popup = PopupList[type.ToString()];
+            popup.SetupData(slot);
+            popup.ShowPopup();         
         }
-        bool check = InitPopup(type);
+        bool check = InitPopup<T,T1>(type);
         return check;
     }
     public BasePopup GetPopup(BasePopup.TypeOfPopup type)
@@ -40,7 +42,7 @@ public class PopupFactory : MonoBehaviour
 
         return null;
     }
-    public bool InitPopup(BasePopup.TypeOfPopup type)
+    public bool InitPopup<T,T1>(BasePopup.TypeOfPopup type, _ActionSlotSetup<T, T1> slot = null)
     {
         UpdateContainer();
         BasePopup popupNeed = Resources.Load<BasePopup>("Popup/" + type.ToString());
@@ -52,6 +54,7 @@ public class PopupFactory : MonoBehaviour
             PopupList.Add(popup.type.ToString(), popup);
             popup.transform.SetAsLastSibling();
             popup.ShowPopup();
+            popup.SetupData(slot);
             return true;
         }
         return false;

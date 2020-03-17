@@ -6,7 +6,7 @@ public class CharacterSlotPanel : _PanelSetup<CharacterSlot, CharacterStat>
     ICharacterManager characterManager;
     private void Awake()
     {
-        //SlotListManager.OnRightClick += ShowItem;
+        //SlotListManager.OnRightClick += ShowBooster;
     }
     private void Start()
     {

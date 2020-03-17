@@ -14,7 +14,7 @@ public class ResourceManager : IResourceManager
         LoadResources();
     }
 
-    public ResourceStat GetItemWithID(int id)
+    public ResourceStat GetBoosterWithID(int id)
     {
         if (id < dataSave.results.Count) return dataSave.results[id];
         return null;

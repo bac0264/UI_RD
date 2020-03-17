@@ -15,7 +15,7 @@ public class SOPrice : ScriptableObject
             PriceData _data = new PriceData(dataCSV[i]);
             priceList.Add(_data);
         }
-        DataSave<BaseStat> dataList = BacJson.FromJson<BaseStat, ResourceStat, ItemStat>(priceList[0].json);
+        DataSave<BaseStat> dataList = BacJson.FromJson<BaseStat, ResourceStat, BoosterStat>(priceList[0].json);
         string _json = BacJson.ToJson<BaseStat>(dataList);
         Debug.Log(_json);
     }

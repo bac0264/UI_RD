@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
 [System.Serializable]
 public class BaseStat
 {
     public enum Type{
-        Resource,
-        ITEM,
+        ResourceStat,
+        BoosterStat,
+        CharacterStat,
     }
 
     public int ID;
@@ -18,6 +21,15 @@ public class BaseStat
         this.VALUE = value;
         ID = 0;
     }
+    public BaseStat(Dictionary<string, string> data)
+    {
+        int.TryParse(data["ID"], out ID);
+        long.TryParse(data["VALUE"], out VALUE);
+        int.TryParse(data["TYPE"], out TYPE);
+        NAME = data["NAME"];
+    }
+
+
     public virtual bool AddPrice() { return false; }
     public virtual bool AddValue(long value)
     {

@@ -9,6 +9,6 @@ public class InitDI : MonoBehaviour
     {
         DIContainer.SetModule<IDataService, DataService>();
         DIContainer.SetModule<IResourceManager, ResourceManager>();
-        DIContainer.SetModule<IItemManager, ItemManager>();
+        DIContainer.SetModule<IBoosterManager, BoosterManager>();
     }
 }

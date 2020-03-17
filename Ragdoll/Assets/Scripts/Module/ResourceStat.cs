@@ -5,14 +5,13 @@ public class ResourceStat : BaseStat
 {
     public enum TypeOfResource
     {
-        GOLD,
-        GEM,
+        GOLD = 0,
     }
     public ResourceStat(long value, TypeOfResource typeOfResource) : base(value)
     {
         this.ID =(int) typeOfResource;
-        NAME = "ResourceStat";
-        this.TYPE = (int)Type.Resource;
+        NAME = Type.ResourceStat.ToString();
+        this.TYPE = (int)Type.ResourceStat;
     }
 
     //    public override AddPrice(IResourceManager irm)

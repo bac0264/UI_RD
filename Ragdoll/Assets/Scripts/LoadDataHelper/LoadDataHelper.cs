@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class LoadDataHelper : MonoBehaviour
 {
-
-    public TextAsset dataPrice;
-    public SOPrice so;
+    public TextAsset dataSpin;
+    public SO_Spin soSpin;
     public void LoadData()
     {
-        var _dataPrice = CSVReader.Read(dataPrice);
-        so.LoadPrice(_dataPrice);
+        var _dataSpin = CSVReader.Read(dataSpin);
+        soSpin.LoadDataSpin(_dataSpin);   
     }
 
 }

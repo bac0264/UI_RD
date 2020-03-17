@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class CharacterManager : ICharacterManager
 {
+    IDataService dataService;
     DataSave<CharacterStat> dataSave;
+
+    public CharacterManager(IDataService dataService)
+    {
+        this.dataService = dataService;
+        LoadCharacters();
+    }
     public CharacterStat[] GetCharacterList()
     {
         return null;
@@ -17,9 +24,11 @@ public class CharacterManager : ICharacterManager
 
     public void LoadCharacters()
     {
+        dataSave = dataService.GetDataSaveWithType<CharacterStat>();
     }
 
     public void SaveCharacters()
     {
+        dataService.Save<CharacterStat>();
     }
 }

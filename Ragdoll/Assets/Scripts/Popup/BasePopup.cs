@@ -24,16 +24,8 @@ public class BasePopup : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-    public virtual void Next()
+    public virtual void SetupData<T,T1>(_ActionSlotSetup<T,T1> data = null, string message = null)
     {
-        HidePopup();
-    }
-    public virtual void Try()
-    {
-        HidePopup();
-    }
-    public virtual void Home()
-    {
-        SceneManager.LoadScene("Menu");
+
     }
 }

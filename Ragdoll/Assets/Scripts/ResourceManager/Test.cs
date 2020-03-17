@@ -10,19 +10,19 @@ public class Test : MonoBehaviour
     {
         DIContainer.SetModule<IDataService, DataService>();
         DIContainer.SetModule<IResourceManager, ResourceManager>();
-        DIContainer.SetModule<IItemManager, ItemManager>();
+        DIContainer.SetModule<IBoosterManager, BoosterManager>();
 
         //IResourceManager dataResource = DIContainer.GetModule<IResourceManager>();
-        // IItemManager itemResource = DIContainer.GetModule<IItemManager>();
+        // IBoosterManager BoosterResource = DIContainer.GetModule<IBoosterManager>();
         //    List<ResourceStat> resourceData = dataResource.RESOURCE_LIST;
-        //    List<ItemStat> itemData = itemResource.ITEM_LIST;
-        //    //List<ItemStat> _data = d
-        //    //Debug.Log("Item");
-        //    for (int i = 0; i < itemData.Count; i++)
+        //    List<BoosterStat> BoosterData = BoosterResource.Booster_LIST;
+        //    //List<BoosterStat> _data = d
+        //    //Debug.Log("Booster");
+        //    for (int i = 0; i < BoosterData.Count; i++)
         //    {
-        //        Debug.Log(JsonUtility.ToJson(itemData[i]));
-        //        itemData[i].VALUE = 10;
-        //        Debug.Log(itemData[i].ID);
+        //        Debug.Log(JsonUtility.ToJson(BoosterData[i]));
+        //        BoosterData[i].VALUE = 10;
+        //        Debug.Log(BoosterData[i].ID);
         //    }
         //    //List<ResourceStat> _data = dataService.GetDataListWithType<BaseStat, ResourceStat>(dataService.GetDataSave());
         //    Debug.Log("Resource");

@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 
-// T is itemSlot, T1 is itemStat
+// T is BoosterSlot, T1 is BoosterStat
 [System.Serializable]
 public class _SlotListSetup<T,T1> : MonoBehaviour
 {
