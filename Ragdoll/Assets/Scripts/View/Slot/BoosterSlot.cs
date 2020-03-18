@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
 {
-
+    IBoosterManager boosterManager;
+    public Button Buy;
+    public Button Free;
     public override BoosterStat DATA { 
         get => base.DATA; set
         {
@@ -16,6 +18,49 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
             IMG_BG.sprite = BaseStatDB.Instance.GetBackground(DATA.TYPE, DATA.ID);
         }
     
+    }
+    public void SetupBoosterManager(IBoosterManager boosterManager)
+    {
+        this.boosterManager = boosterManager;
+    }
+    private void Start()
+    {
+        SetupFreeBtn();
+        SetupBuyBtn();
+    }
+    public void SetupBuyBtn()
+    {
+        Buy.onClick.RemoveAllListeners();
+        Buy.onClick.AddListener(delegate
+        {
+            BuyBtn();
+        });
+    }
+    public void SetupFreeBtn()
+    {
+        Free.onClick.RemoveAllListeners();
+        Free.onClick.AddListener(delegate
+        {
+            FreeBtn();
+        });
+    }
+    public void BuyBtn()
+    {
+        if (DATA.AddPrice(1))
+        {
+            if (boosterManager != null)
+                boosterManager.SaveBoosters();
+            else DIContainer.GetModule<IBoosterManager>().SaveBoosters();
+        }
+    }
+    public void FreeBtn()
+    {
+        if (DATA.AddPrice(1))
+        {
+            if (boosterManager != null)
+                boosterManager.SaveBoosters();
+            else DIContainer.GetModule<IBoosterManager>().SaveBoosters();
+        }
     }
     public override void OnPointerClick(PointerEventData eventData)
     {

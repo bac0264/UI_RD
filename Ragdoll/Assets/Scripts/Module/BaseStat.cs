@@ -30,7 +30,7 @@ public class BaseStat
     }
 
 
-    public virtual bool AddPrice() { return false; }
+    public virtual bool AddPrice(long value = 0) { return false; }
     public virtual bool AddValue(long value)
     {
         if (value > 0)

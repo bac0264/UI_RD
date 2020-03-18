@@ -8,7 +8,6 @@ public class Snap : MonoBehaviour
     // process
     public RectTransform panel; // to hold the scrollView
     public List<RectTransform> posList; // 
-    //public CharacterSlot[] slots;
     public RectTransform center; // Center to compare the distance for each iten 
     public bool startSnap;
     public float[] distance; // All Item's center
@@ -22,13 +21,12 @@ public class Snap : MonoBehaviour
     // UI
     public void SetupSnap(CharacterStat cur, CharacterSlotPanel panel, ICharacterManager characterManager)
     {
-        Debug.Log(cur);
-        container = panel;
-        this.characterManager = characterManager;
         checkStart = true;
-        distance = new float[posList.Count];
+        container = panel;
         minButtonNum = cur.ID;
+        distance = new float[posList.Count];
         _initPos((minButtonNum) * (-bttnDistance));
+        this.characterManager = characterManager;
 
     }
     private void OnValidate()
@@ -36,18 +34,16 @@ public class Snap : MonoBehaviour
         if (posList == null || posList.Count == 0 /*|| slots == null*/)
         {
             CharacterSlot[] slots = GetComponentsInChildren<CharacterSlot>();
-            foreach(CharacterSlot slot in slots)
+            foreach (CharacterSlot slot in slots)
             {
                 posList.Add(slot.GetComponent<RectTransform>());
             }
-        }
-      //  if (bttnDistance == 0) bttnDistance = (int)Mathf.Abs(posList[1].GetComponent<RectTransform>().anchoredPosition.x - posList[0].GetComponent<RectTransform>().anchoredPosition.x);
+        }    
     }
     private void Update()
     {
         if (checkStart)
         {
-            //DOTween.CompleteAll();
             for (int i = 0; i < posList.Count; i++)
             {
                 distance[i] = (float)Mathf.Abs(center.transform.position.x - posList[i].transform.position.x);
@@ -63,8 +59,6 @@ public class Snap : MonoBehaviour
                 {
                     minButtonNum = a;
                     if (container != null) container.RefeshUI(minButtonNum);
-                    // Refresh UI
-                    //mapDisplay.RefreshUI(mapSlotList.getSlotWithId(minButtonNum));
                     break;
                 }
             }
@@ -77,7 +71,6 @@ public class Snap : MonoBehaviour
     public void LerpToImage(float position)
     {
         float newX = Mathf.Lerp(panel.anchoredPosition.x, position, 0.2f);
-        //  float newX = position;
         Vector2 newPosition = new Vector2(newX, panel.anchoredPosition.y);
         panel.anchoredPosition = newPosition;
     }

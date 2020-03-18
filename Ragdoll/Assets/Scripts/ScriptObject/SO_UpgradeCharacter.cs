@@ -23,13 +23,13 @@ public class DataUpgradeCharacter
     public int LEVEL;
     public int ATK;
     public int HP;
-    public int GOLD;
+    public long GOLD;
 
     public DataUpgradeCharacter(Dictionary<string, string> data)
     {
         int.TryParse(data["LEVEL"], out LEVEL);
         int.TryParse(data["ATK"], out ATK);
         int.TryParse(data["HP"], out HP);
-        int.TryParse(data["GOLD"], out GOLD);
+        long.TryParse(data["GOLD"], out GOLD);
     }
 }

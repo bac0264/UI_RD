@@ -21,14 +21,11 @@ public class CharacterManager : ICharacterManager
         }
         set
         {
-            Debug.Log(value.ID);
-            Debug.Log(value.IsBought);
             if (value != null && value.IsBought)
             {
                 CurCharacter = value;
                 if (CurCharacter != null && CurCharacter.IsBought)
                 {
-                    Debug.Log("run - 1");
                     PlayerPrefs.SetString("CurrentCharacter", JsonUtility.ToJson(CurCharacter));
 
                 }

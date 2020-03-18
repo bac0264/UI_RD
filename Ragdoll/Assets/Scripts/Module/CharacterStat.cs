@@ -44,6 +44,6 @@ public class CharacterStat : BaseStat
         IsBought = this.IsBought;
         // IsUsed = this.IsUsed;
         NAME = Type.CharacterStat.ToString();
-        VideoUnlock = 5;
+        VideoUnlock = 0;
     }
 }
