@@ -6,6 +6,7 @@ public class ResourceStat : BaseStat
     public enum TypeOfResource
     {
         GOLD = 0,
+        EXP = 1,
     }
     public ResourceStat(long value, TypeOfResource typeOfResource) : base(value)
     {

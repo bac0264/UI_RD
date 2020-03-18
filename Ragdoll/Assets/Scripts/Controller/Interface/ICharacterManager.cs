@@ -8,4 +8,10 @@ public interface ICharacterManager
 
     void LoadCharacters();
     void SaveCharacters();
+
+    CharacterStat CurrentCharacter
+    {
+        set;
+        get;
+    }
 }

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public interface IResourceManager
 {
     ResourceStat[] GetResourceList();
-    ResourceStat GetBoosterWithID(int id);
+    ResourceStat GetResourceWithID(int id);
 
     void LoadResources();
 

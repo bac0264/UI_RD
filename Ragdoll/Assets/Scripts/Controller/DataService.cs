@@ -44,7 +44,7 @@ public class DataService : IDataService
         int resource_count = Enum.GetNames(typeof(ResourceStat.TypeOfResource)).Length;
         for (int i = 0; i < resource_count; i++)
         {
-            ResourceStat resource = new ResourceStat(1, (ResourceStat.TypeOfResource)i);
+            ResourceStat resource = new ResourceStat(12, (ResourceStat.TypeOfResource)i);
             ResourceStat_DataSave.Add(resource);
         }
     }
@@ -64,22 +64,23 @@ public class DataService : IDataService
         if (typeof(T).ToString().Equals(BaseStat.Type.BoosterStat.ToString())) return (DataSave<T>)(object)BoosterStat_DataSave;
         else if (typeof(T).ToString().Equals(BaseStat.Type.ResourceStat.ToString())) return (DataSave<T>)(object)ResourceStat_DataSave;
         else if (typeof(T).ToString().Equals(BaseStat.Type.CharacterStat.ToString())) return (DataSave<T>)(object)CharacterStat_DataSave;
+        
         return null;
     }
     void Save()
     {
         string dataBooster = JsonUtility.ToJson(BoosterStat_DataSave);
         string dataResource = JsonUtility.ToJson(ResourceStat_DataSave);
-        string dataCharacter = JsonUtility.ToJson(CharacterStat_DataSave);
+        string DataCharacterUnlock = JsonUtility.ToJson(CharacterStat_DataSave);
         PlayerPrefs.SetString(DATA_BoosterS, dataBooster);
         PlayerPrefs.SetString(DATA_RESOURCES, dataResource);
-        PlayerPrefs.SetString(DATA_CHARACTERS, dataCharacter);
+        PlayerPrefs.SetString(DATA_CHARACTERS, DataCharacterUnlock);
     }
     public void Save<T>()
     {
         if (typeof(T).ToString().Equals(BaseStat.Type.BoosterStat.ToString())) PlayerPrefs.SetString(DATA_BoosterS, JsonUtility.ToJson(BoosterStat_DataSave));
-        else if (typeof(T).ToString().Equals(BaseStat.Type.ResourceStat.ToString())) PlayerPrefs.SetString(DATA_BoosterS, JsonUtility.ToJson(ResourceStat_DataSave));
-        else if (typeof(T).ToString().Equals(BaseStat.Type.CharacterStat.ToString())) PlayerPrefs.SetString(DATA_BoosterS, JsonUtility.ToJson(CharacterStat_DataSave));
+        else if (typeof(T).ToString().Equals(BaseStat.Type.ResourceStat.ToString())) PlayerPrefs.SetString(DATA_RESOURCES, JsonUtility.ToJson(ResourceStat_DataSave));
+        else if (typeof(T).ToString().Equals(BaseStat.Type.CharacterStat.ToString())) PlayerPrefs.SetString(DATA_CHARACTERS, JsonUtility.ToJson(CharacterStat_DataSave));
     }
     public void Load()
     {
