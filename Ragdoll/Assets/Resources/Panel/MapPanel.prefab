@@ -253,6 +253,7 @@ MonoBehaviour:
   snapUseCellSpacing: 0
   snapTweenType: 1
   snapTweenTime: 0
+  type: 1
 --- !u!114 &4442582935703412887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,6 +377,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22431160, guid: 08e70cc489983794db10b44458c6ffa1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22431160, guid: 08e70cc489983794db10b44458c6ffa1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22431160, guid: 08e70cc489983794db10b44458c6ffa1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22431160, guid: 08e70cc489983794db10b44458c6ffa1, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -415,15 +428,9 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 224349946341826484, guid: 08e70cc489983794db10b44458c6ffa1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114043873029530114, guid: 08e70cc489983794db10b44458c6ffa1,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.5803922
+    - target: {fileID: 161634, guid: 08e70cc489983794db10b44458c6ffa1, type: 3}
+      propertyPath: m_Name
+      value: MasterCellView
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08e70cc489983794db10b44458c6ffa1, type: 3}

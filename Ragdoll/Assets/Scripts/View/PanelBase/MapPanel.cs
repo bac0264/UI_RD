@@ -23,7 +23,15 @@ public class MapPanel : _PanelSetup<MapSlot, MapDataStat>
     {
         if(data.DATA != null && data is MapSlot)
         {
-            Debug.Log(data.DATA.ID);
+            MapSlot _data = data as MapSlot;
+            if(_data != null && _data.PickLevel())
+            {
+
+            }
+            else
+            {
+
+            }
         }
     }
     public void SetupAll(IMapManager mapManager)

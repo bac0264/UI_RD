@@ -1192,6 +1192,13 @@ namespace EnhancedUI.EnhancedScroller
         /// <summary>
         /// This sets up the visible cells, adding and recycling as necessary
         /// </summary>
+        /// 
+        public enum TypeOfScroll
+        {
+            Normal,
+            Map,
+        }
+        public TypeOfScroll type;
         private void _ResetVisibleCellViews()
         {
             int startIndex;
@@ -1207,6 +1214,8 @@ namespace EnhancedUI.EnhancedScroller
             {
                 if (_activeCellViews[i].cellIndex < startIndex || _activeCellViews[i].cellIndex > endIndex)
                 {
+                    Debug.Log(_activeCellViews[0].cellIndex);
+                    Debug.Log(startIndex);
                     _RecycleCell(_activeCellViews[i]);
                 }
                 else
@@ -1225,9 +1234,19 @@ namespace EnhancedUI.EnhancedScroller
                 // an entirely different part of the list.
                 // just add all the new cell views
 
-                for (i = startIndex; i <= endIndex; i++)
+                if (type == TypeOfScroll.Map)
                 {
-                    _AddCellView(i, ListPositionEnum.Last);
+                    for (i = startIndex; i <= (endIndex + 1); i++)
+                    {
+                        _AddCellView(i, ListPositionEnum.Last);
+                    }
+                }
+                else
+                {
+                    for (i = startIndex; i <= endIndex ; i++)
+                    {
+                        _AddCellView(i, ListPositionEnum.Last);
+                    }
                 }
             }
             else
@@ -1338,7 +1357,9 @@ namespace EnhancedUI.EnhancedScroller
             if (listPosition == ListPositionEnum.First)
                 _activeCellViews.AddStart(cellView);
             else
+            {
                 _activeCellViews.Add(cellView);
+            }
 
             // set the hierarchy position of the cell view in the container
             if (listPosition == ListPositionEnum.Last)
@@ -1550,7 +1571,6 @@ namespace EnhancedUI.EnhancedScroller
             go.transform.SetParent(_scrollRect.transform, false);
             _recycledCellViewContainer = go.GetComponent<RectTransform>();
             _recycledCellViewContainer.gameObject.SetActive(false);
-
             // set up the last values for updates
             _lastScrollRectSize = ScrollRectSize;
             _lastLoop = loop;
