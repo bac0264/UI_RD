@@ -6,11 +6,8 @@ using System;
 
 public class DataService : IDataService
 {
-    public const string DATA_BoosterS = "BoosterStat";
-    public const string DATA_RESOURCES = "ResourceStat";
-    public const string DATA_CHARACTERS = "CharacterStat";
-    //DataSave<BaseStat> BaseStat_dataSave;
     DataSave<BoosterStat> BoosterStat_DataSave;
+    DataSave<MapDataStat> MapDataStat_DataSave;
     DataSave<ResourceStat> ResourceStat_DataSave;
     DataSave<CharacterStat> CharacterStat_DataSave;
     public DataService()
@@ -20,6 +17,7 @@ public class DataService : IDataService
             AddResources();
             AddBoosters();
             AddCharacters();
+            AddMaps();
             Save();
             PlayerPrefs.SetInt("First", 1);
         }
@@ -52,10 +50,45 @@ public class DataService : IDataService
     {
         CharacterStat_DataSave = new DataSave<CharacterStat>();
         int character_count = Enum.GetNames(typeof(CharacterStat.TypeOfCharacter)).Length;
+        Debug.Log(character_count);
         for (int i = 0; i < character_count; i++)
         {
             CharacterStat resource = new CharacterStat((CharacterStat.TypeOfCharacter)i);
+            if (i == 0) resource.IsBought = true;
             CharacterStat_DataSave.Add(resource);
+        }
+    }
+    void AddMaps()
+    {
+        int CurMapCount = 100;
+        MapDataStat_DataSave = new DataSave<MapDataStat>();
+        int i = 0;
+        for (; i < CurMapCount; i++)
+        {
+            MapDataStat map = new MapDataStat(i);
+            if (i == 0)
+                map.IS_OPEN = true;
+            MapDataStat_DataSave.Add(map);
+        }
+        Debug.Log(JsonUtility.ToJson(MapDataStat_DataSave));
+    }
+    void CheckMapInPref()
+    {
+        int MapInPrefbs = 100;
+        MapDataStat_DataSave = new DataSave<MapDataStat>();
+        int i = 0;
+        for (; i < MapInPrefbs && i < MapDataStat_DataSave.results.Count; i++)
+        {
+        }
+        if (i < MapInPrefbs)
+        {
+            for (; i < MapInPrefbs; i++)
+            {
+                MapDataStat map = new MapDataStat(i);
+                MapDataStat_DataSave.Add(map);
+            }
+            Save<MapDataStat>();
+            Debug.Log(JsonUtility.ToJson(MapDataStat_DataSave));
         }
     }
     #endregion
@@ -64,29 +97,33 @@ public class DataService : IDataService
         if (typeof(T).ToString().Equals(BaseStat.Type.BoosterStat.ToString())) return (DataSave<T>)(object)BoosterStat_DataSave;
         else if (typeof(T).ToString().Equals(BaseStat.Type.ResourceStat.ToString())) return (DataSave<T>)(object)ResourceStat_DataSave;
         else if (typeof(T).ToString().Equals(BaseStat.Type.CharacterStat.ToString())) return (DataSave<T>)(object)CharacterStat_DataSave;
-        
+        else if (typeof(T).ToString().Equals(typeof(MapDataStat).ToString())) return (DataSave<T>)(object)MapDataStat_DataSave;
         return null;
     }
     void Save()
     {
+        string dataMap = JsonUtility.ToJson(MapDataStat_DataSave);
         string dataBooster = JsonUtility.ToJson(BoosterStat_DataSave);
         string dataResource = JsonUtility.ToJson(ResourceStat_DataSave);
         string DataCharacterUnlock = JsonUtility.ToJson(CharacterStat_DataSave);
-        PlayerPrefs.SetString(DATA_BoosterS, dataBooster);
-        PlayerPrefs.SetString(DATA_RESOURCES, dataResource);
-        PlayerPrefs.SetString(DATA_CHARACTERS, DataCharacterUnlock);
+        PlayerPrefs.SetString(KeySave.DATA_MAP, dataMap);
+        PlayerPrefs.SetString(KeySave.DATA_BOOSTERS, dataBooster);
+        PlayerPrefs.SetString(KeySave.DATA_RESOURCES, dataResource);
+        PlayerPrefs.SetString(KeySave.DATA_CHARACTERS, DataCharacterUnlock);
     }
     public void Save<T>()
     {
-        if (typeof(T).ToString().Equals(BaseStat.Type.BoosterStat.ToString())) PlayerPrefs.SetString(DATA_BoosterS, JsonUtility.ToJson(BoosterStat_DataSave));
-        else if (typeof(T).ToString().Equals(BaseStat.Type.ResourceStat.ToString())) PlayerPrefs.SetString(DATA_RESOURCES, JsonUtility.ToJson(ResourceStat_DataSave));
-        else if (typeof(T).ToString().Equals(BaseStat.Type.CharacterStat.ToString())) PlayerPrefs.SetString(DATA_CHARACTERS, JsonUtility.ToJson(CharacterStat_DataSave));
+        if (typeof(T).ToString().Equals(BaseStat.Type.BoosterStat.ToString())) PlayerPrefs.SetString(KeySave.DATA_BOOSTERS, JsonUtility.ToJson(BoosterStat_DataSave));
+        else if (typeof(T).ToString().Equals(BaseStat.Type.ResourceStat.ToString())) PlayerPrefs.SetString(KeySave.DATA_RESOURCES, JsonUtility.ToJson(ResourceStat_DataSave));
+        else if (typeof(T).ToString().Equals(BaseStat.Type.CharacterStat.ToString())) PlayerPrefs.SetString(KeySave.DATA_CHARACTERS, JsonUtility.ToJson(CharacterStat_DataSave));
+        else if (typeof(T).ToString().Equals(typeof(MapDataStat).ToString())) PlayerPrefs.SetString(KeySave.DATA_MAP, JsonUtility.ToJson(MapDataStat_DataSave));
     }
     public void Load()
     {
-        BoosterStat_DataSave = JsonUtility.FromJson<DataSave<BoosterStat>>(PlayerPrefs.GetString(DATA_BoosterS));
-        ResourceStat_DataSave = JsonUtility.FromJson<DataSave<ResourceStat>>(PlayerPrefs.GetString(DATA_RESOURCES));
-        CharacterStat_DataSave = JsonUtility.FromJson<DataSave<CharacterStat>>(PlayerPrefs.GetString(DATA_CHARACTERS));
+        MapDataStat_DataSave = JsonUtility.FromJson<DataSave<MapDataStat>>(PlayerPrefs.GetString(KeySave.DATA_MAP));
+        BoosterStat_DataSave = JsonUtility.FromJson<DataSave<BoosterStat>>(PlayerPrefs.GetString(KeySave.DATA_BOOSTERS));
+        ResourceStat_DataSave = JsonUtility.FromJson<DataSave<ResourceStat>>(PlayerPrefs.GetString(KeySave.DATA_RESOURCES));
+        CharacterStat_DataSave = JsonUtility.FromJson<DataSave<CharacterStat>>(PlayerPrefs.GetString(KeySave.DATA_CHARACTERS));
     }
     //public List<T1> GetDataListWithType<T, T1>(DataSave<T> data)
     //{

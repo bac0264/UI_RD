@@ -3,6 +3,10 @@ using System.Collections;
 
 public class BoosterSlotList : _SlotListSetup<BoosterSlot, BoosterStat>
 {
+    public override void Start()
+    {
+        base.Start();
+    }
     public void SetupBoosterManager(IBoosterManager boosterManager)
     {
         foreach(BoosterSlot slot in slotList)

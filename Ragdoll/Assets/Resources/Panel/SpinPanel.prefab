@@ -181,8 +181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdfae45de92fc4040a4f0e9da8d5adef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelType: 0
   animator: {fileID: 8601740210866507503}
+  panelType: 0
   SpinImage: {fileID: 6300336258832017238}
   spin: {fileID: 11400000, guid: 24962b97ecf228a45a446fe211401bf3, type: 2}
   index: 0

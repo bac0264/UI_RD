@@ -9,7 +9,7 @@ public class BoosterSlotPanel : _PanelSetup<BoosterSlot, BoosterStat>
     {
         this.BoosterManager = BoosterManager;
         List<BoosterStat> BoosterNeeds = new List<BoosterStat>();
-        int[] IndexBoosterNeeds = new int[] { 0, 2, 4 };
+        int[] IndexBoosterNeeds = new int[] { 3,1,2 };
         for (int i = 0; i < IndexBoosterNeeds.Length; i++)
         {
             if (IndexBoosterNeeds[i] < BoosterManager.GetBoosterList().Length)
@@ -22,7 +22,6 @@ public class BoosterSlotPanel : _PanelSetup<BoosterSlot, BoosterStat>
                 BoosterNeeds.Add(BoosterManager.GetBoosterList()[IndexBoosterNeeds[i]]);
             }
         }
-        Debug.Log(BoosterNeeds.Count);
         if (SlotListManager is BoosterSlotList)
         {
             BoosterSlotList slotList = SlotListManager as BoosterSlotList;
@@ -32,13 +31,19 @@ public class BoosterSlotPanel : _PanelSetup<BoosterSlot, BoosterStat>
     }
     private void Awake()
     {
-        //SlotListManager.OnRightClick += ShowBooster;
+        SlotListManager.OnRightClick += PickBooster;
     }
     public override void Setup(BoosterStat[] dataBase = null)
     {
         base.Setup(dataBase);
     }
-    public void ShowBooster(_ActionSlotSetup<BoosterSlot, BoosterStat> Booster)
+    public void PickBooster(_ActionSlotSetup<BoosterSlot, BoosterStat> Booster)
     {
+        Debug.Log("run");
+        if(Booster != null && Booster is BoosterSlot)
+        {
+            BoosterSlot boosterSlot = Booster as BoosterSlot;
+            boosterSlot.PickBooster();
+        }
     }
 }

@@ -4,8 +4,9 @@ using UnityEngine.UI;
 
 public class CharacterSlotPanel : _PanelSetup<CharacterSlot, CharacterStat>
 {
-    //public const int MAX = upgradeCharacterData.upgradeCharacterDatas.Count - 1;
-
+    public const int MAX = 9;
+    public const int ATK_MAX = 5300;
+    public const int HP_MAX = 12590;
     ICharacterManager characterManager;
     IResourceManager resourceManager;
 
@@ -22,6 +23,9 @@ public class CharacterSlotPanel : _PanelSetup<CharacterSlot, CharacterStat>
     public Text VIDEO_VALUE;
     public Text GOLD_VALUE;
     public Text GOLD_UPGRADE_VALUE;
+
+    public Image fillATK;
+    public Image fillHP;
 
     private DataCharacterUnlock dataCharacterUnlock;
     private DataUpgradeCharacter dataUpgradeCharacter;
@@ -48,7 +52,7 @@ public class CharacterSlotPanel : _PanelSetup<CharacterSlot, CharacterStat>
 
     public void RefeshUI(int _cur)
     {
-        int levelMap = 8;
+        int levelMap = 50;
         currrentCharacter = characterManager.GetCharacterWithID(_cur);
         dataCharacterUnlock = characterData.characterDatas[currrentCharacter.ID];
         dataUpgradeCharacter = upgradeCharacterData.upgradeCharacterDatas[currrentCharacter.LEVEL];
@@ -87,7 +91,7 @@ public class CharacterSlotPanel : _PanelSetup<CharacterSlot, CharacterStat>
         else
         {
             // note lack of transforming exp to level
-            if (currrentCharacter.LEVEL >= (upgradeCharacterData.upgradeCharacterDatas.Count - 1))
+            if (currrentCharacter.LEVEL >= (MAX + currrentCharacter.ID))
             {
                 IsUpgrade.SetActive(false);
                 IsUnlock.SetActive(false);
@@ -101,8 +105,8 @@ public class CharacterSlotPanel : _PanelSetup<CharacterSlot, CharacterStat>
                 Display.gameObject.SetActive(false);
                 GOLD_UPGRADE_VALUE.text = dataUpgradeCharacter.GOLD.ToString();
             }
-            RefreshHeroStat();
         }
+        RefreshHeroStat();
     }
     public void RefreshHeroStat()
     {
@@ -113,20 +117,21 @@ public class CharacterSlotPanel : _PanelSetup<CharacterSlot, CharacterStat>
             HPbonus += upgradeCharacterData.upgradeCharacterDatas[i].HP;
             ATKbonus += upgradeCharacterData.upgradeCharacterDatas[i].ATK;
         }
-        HP_VALUE.text = (dataCharacterUnlock.HP + HPbonus).ToString();
-        ATK_VALUE.text = (dataCharacterUnlock.ATK + ATKbonus).ToString();
+        ATKbonus += dataCharacterUnlock.ATK;
+        HPbonus += dataCharacterUnlock.HP;
+        HP_VALUE.text = HPbonus.ToString();
+        ATK_VALUE.text = ATKbonus.ToString();
+        fillATK.fillAmount = (float)ATKbonus / ATK_MAX;
+        fillHP.fillAmount = (float)HPbonus / HP_MAX;
         characterManager.CurrentCharacter = currrentCharacter;
     }
     public void Upgrade()
     {
-        Debug.Log(currrentCharacter.LEVEL);
-        if (currrentCharacter.LEVEL >= (upgradeCharacterData.upgradeCharacterDatas.Count - 1)) return;
+        if (currrentCharacter.LEVEL >= (MAX + currrentCharacter.ID)) return;
         resourceManager.GetResourceWithID((int)ResourceStat.TypeOfResource.GOLD).AddValue(dataUpgradeCharacter.GOLD);
-        Debug.Log(resourceManager.GetResourceWithID((int)ResourceStat.TypeOfResource.GOLD).VALUE);
         if (resourceManager.GetResourceWithID((int)ResourceStat.TypeOfResource.GOLD).ReduceValue(dataUpgradeCharacter.GOLD))
         {
             currrentCharacter.LEVEL++;
-            Debug.Log(currrentCharacter.LEVEL);
             characterManager.SaveCharacters();
             resourceManager.SaveResources();
         }
@@ -134,7 +139,6 @@ public class CharacterSlotPanel : _PanelSetup<CharacterSlot, CharacterStat>
     public void Unlock()
     {
         resourceManager.GetResourceWithID((int)ResourceStat.TypeOfResource.GOLD).AddValue(dataCharacterUnlock.GOLD_UNLOCK);
-        Debug.Log(resourceManager.GetResourceWithID((int)ResourceStat.TypeOfResource.GOLD).VALUE);
         if (resourceManager.GetResourceWithID((int)ResourceStat.TypeOfResource.GOLD).ReduceValue(dataCharacterUnlock.GOLD_UNLOCK))
         {
             currrentCharacter.IsBought = true;

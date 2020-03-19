@@ -33,23 +33,45 @@ public class UIMenuManager : MonoBehaviour
         IsHide = false;
         Prevent.SetActive(false);
     }
+    // Story Mode
+    #region
+    public void _StoryMode()
+    {
+        StartCoroutine(StoryMode());
+    }
+    IEnumerator StoryMode()
+    {
+        HideMenu();
+        yield return new WaitUntil(() => IsHide);
+        if (PanelFactory.instance != null) PanelFactory.instance.ShowPanel(PanelType.StoryModePanel);
+    }
+    #endregion
+    // Shop
+    #region
     public void _Shop()
     {
 
     }
+    #endregion
+    // Daily Gift
+    #region
     public void _DailyGift()
     {
 
     }
-
+    #endregion
+    // SPIN
+    #region
     public void _Spin()
     {
         StartCoroutine(Spin());
     }
     IEnumerator Spin()
     {
-        HideMenu();
-        yield return new WaitUntil(() => IsHide);
-       // if (PanelFactory.instance != null) PanelFactory.instance.ShowPanel<BaseSlot, BaseStat>(PanelType.SpinPanel);
+        yield return null;
+        // HideMenu();
+        // yield return new WaitUntil(() => IsHide);
+        // if (PanelFactory.instance != null) PanelFactory.instance.ShowPanel<BaseSlot, BaseStat>(PanelType.SpinPanel);
     }
+    #endregion
 }

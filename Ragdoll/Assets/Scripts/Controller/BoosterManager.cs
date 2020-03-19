@@ -31,7 +31,7 @@ public class BoosterManager : IBoosterManager
 
     public void SaveBoosters()
     {
-        PlayerPrefs.SetString("BoosterStat", JsonUtility.ToJson(dataSave));
+        dataService.Save<BoosterStat>();
     }
 
     // Start is called before the first frame update

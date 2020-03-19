@@ -46,11 +46,8 @@ public class PanelFactory : MonoBehaviour
     public bool InitPanel(PanelType type)
     {
         UpdateContainer();
-        Debug.Log("run");
-        Debug.Log("Panel/" + type.ToString());
         BasePanel panelNeed = Resources.Load<BasePanel>("Panel/" + type.ToString());
         if (panelNeed == null) return false;
-        Debug.Log(panelNeed);
         GameObject obj = Instantiate(panelNeed.gameObject, container);
         BasePanel panel = obj.GetComponent< BasePanel>();
         if (panel != null)

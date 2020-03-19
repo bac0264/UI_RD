@@ -3,7 +3,9 @@ using System.Collections;
 public enum PanelType
 {
     SpinPanel = 0,
-    StoryMode = 1,
+    StoryModePanel = 1,
+    CharacterPanel = 2,
+    BoosterPanel = 3,
 }
 public class BasePanel : MonoBehaviour
 {

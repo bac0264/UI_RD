@@ -3,15 +3,18 @@ using System.Collections;
 
 public interface IMapManager
 {
+    MapDataStat[] MapDataList();
+    MapDataStat GetMapWithID(int id);
+    MapDataStat HIGHEST_LEVEL
+    {
+        get;
+    }
+    MapDataStat CUR_LEVEL
+    {
+        set;
+        get;
+    }
+    void LoadMaps();
 
-    int HIGHEST_LEVEL
-    {
-        set;
-        get;
-    }
-    int CUR_LEVEL
-    {
-        set;
-        get;
-    }
+    void SaveMaps();
 }

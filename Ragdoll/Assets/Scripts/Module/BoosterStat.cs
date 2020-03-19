@@ -14,12 +14,13 @@ public class BoosterStat : BaseStat
         OBSTACLE_IMMUMITY = 5,
         CHAIN_LIGHTNING = 6,
     }
-    //[System.NonSerialized]
+    public bool IsPick;
     public BoosterStat(long value, TypeOfBooster typeOfBooster) : base(value)
     {
         this.ID = (int)typeOfBooster;
         this.TYPE = (int)Type.BoosterStat;
         NAME = Type.BoosterStat.ToString();
+        IsPick = false;
     }
     public override bool AddPrice(long value = 0)
     {

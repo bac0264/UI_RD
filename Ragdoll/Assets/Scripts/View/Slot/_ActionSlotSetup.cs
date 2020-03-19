@@ -3,9 +3,10 @@ using System.Collections;
 using UnityEngine.EventSystems;
 using System;
 using UnityEngine.UI;
+using EnhancedUI.EnhancedScroller;
 
 [System.Serializable]
-public class _ActionSlotSetup<T,T1> : MonoBehaviour
+public class _ActionSlotSetup<T,T1> : EnhancedScrollerCellView, IPointerClickHandler
 {
     private T1 data;
     public Text TXT_VALUE;
@@ -20,9 +21,11 @@ public class _ActionSlotSetup<T,T1> : MonoBehaviour
         }
         get { return data; }
     }
-    //  public virtual AddData(T data)
-    public virtual void OnPointerClick(PointerEventData eventData)
+
+    public void OnPointerClick(PointerEventData eventData)
     {
+       // Debug.Log(this);
+        Debug.Log(OnRightClickEvent);
         if (eventData != null && (eventData.button == PointerEventData.InputButton.Right || eventData.clickCount > 0))
         {
             if (OnRightClickEvent != null && this != null)
@@ -30,6 +33,18 @@ public class _ActionSlotSetup<T,T1> : MonoBehaviour
                 OnRightClickEvent(this);
             }
         }
-
     }
+    //  public virtual AddData(T data)
+    //public void OnPointerClick(PointerEventData eventData)
+    //{
+    //    Debug.Log("run");
+    //    if (eventData != null && (eventData.button == PointerEventData.InputButton.Right || eventData.clickCount > 0))
+    //    {
+    //        if (OnRightClickEvent != null && this != null)
+    //        {
+    //            OnRightClickEvent(this);
+    //        }
+    //    }
+
+    //}
 }

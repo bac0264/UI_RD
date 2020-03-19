@@ -52,9 +52,7 @@ public class CharacterManager : ICharacterManager
         {
             if (dataSave.results.Count > 0)
             {
-                dataSave.results[0].IsBought = true;
                 CurrentCharacter = dataSave.results[0];
-                SaveCharacters();
             }
         }
     }

@@ -33,7 +33,6 @@ public class ResourceManager : IResourceManager
 
     public void SaveResources()
     {
-        PlayerPrefs.SetString("ResourceStat", JsonUtility.ToJson(dataSave));
-        Debug.Log(PlayerPrefs.GetString("ResourceStat"));
+        dataService.Save<ResourceStat>();
     }
 }

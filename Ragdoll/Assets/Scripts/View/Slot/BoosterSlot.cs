@@ -8,16 +8,23 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
     IBoosterManager boosterManager;
     public Button Buy;
     public Button Free;
-    public override BoosterStat DATA { 
+    public GameObject IsPick;
+    public override BoosterStat DATA
+    {
         get => base.DATA; set
         {
             base.DATA = value;
 
-            TXT_VALUE.text = DATA.VALUE.ToString();
-            IMG_ICON.sprite = BaseStatDB.Instance.GetIcon(DATA.TYPE, DATA.ID);
-            IMG_BG.sprite = BaseStatDB.Instance.GetBackground(DATA.TYPE, DATA.ID);
+            if (TXT_VALUE != null) TXT_VALUE.text = DATA.VALUE.ToString();
+            if (IMG_ICON != null) IMG_ICON.sprite = SpriteDB.Instance.GetIconBoosterInStoryMode(DATA.ID);
+            if (IMG_BG != null) IMG_BG.sprite = SpriteDB.Instance.GetBackground(DATA.TYPE, DATA.ID);
+            if (DATA.VALUE <= 0) DATA.IsPick = false;
+            if (IsPick != null)
+            {
+                if (DATA.IsPick) IsPick.SetActive(true);
+                else IsPick.SetActive(false);
+            }
         }
-    
     }
     public void SetupBoosterManager(IBoosterManager boosterManager)
     {
@@ -28,6 +35,23 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
         SetupFreeBtn();
         SetupBuyBtn();
     }
+    // Pick booster
+    #region
+    public void PickBooster()
+    {
+        if (DATA != null && DATA.VALUE > 0)
+        {
+            if (DATA.IsPick) DATA.IsPick = false;
+            else DATA.IsPick = true;
+            DATA = DATA;
+            if (boosterManager != null)
+                boosterManager.SaveBoosters();
+            else DIContainer.GetModule<IBoosterManager>().SaveBoosters();
+        }
+    }
+    #endregion
+    // Buy Button
+    #region
     public void SetupBuyBtn()
     {
         Buy.onClick.RemoveAllListeners();
@@ -36,6 +60,19 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
             BuyBtn();
         });
     }
+    public void BuyBtn()
+    {
+        if (DATA.AddPrice(1))
+        {
+            DATA = DATA;
+            if (boosterManager != null)
+                boosterManager.SaveBoosters();
+            else DIContainer.GetModule<IBoosterManager>().SaveBoosters();
+        }
+    }
+    #endregion
+    // FREE Button
+    #region
     public void SetupFreeBtn()
     {
         Free.onClick.RemoveAllListeners();
@@ -44,26 +81,15 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
             FreeBtn();
         });
     }
-    public void BuyBtn()
-    {
-        if (DATA.AddPrice(1))
-        {
-            if (boosterManager != null)
-                boosterManager.SaveBoosters();
-            else DIContainer.GetModule<IBoosterManager>().SaveBoosters();
-        }
-    }
     public void FreeBtn()
     {
         if (DATA.AddPrice(1))
         {
+            DATA = DATA;
             if (boosterManager != null)
                 boosterManager.SaveBoosters();
             else DIContainer.GetModule<IBoosterManager>().SaveBoosters();
         }
     }
-    public override void OnPointerClick(PointerEventData eventData)
-    {
-        base.OnPointerClick(eventData);
-    }
+    #endregion
 }

@@ -23,7 +23,7 @@ public class PopupFactory : MonoBehaviour
 
     public void UpdateContainer()
     {
-        if (container == null) container = GameObject.FindGameObjectWithTag(KeySave.CONTAINER_POPUP).transform;
+      //  if (container == null) container = GameObject.FindGameObjectWithTag(KeySave.CONTAINER_POPUP).transform;
     }
 
     public bool ShowPopup<T,T1>(BasePopup.TypeOfPopup type, string message = null, _ActionSlotSetup<T,T1> slot = null)

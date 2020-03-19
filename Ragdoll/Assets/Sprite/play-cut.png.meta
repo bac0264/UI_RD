@@ -1,0 +1,1111 @@
+fileFormatVersion: 2
+guid: dfa33983f78e715459ffb517f65e4e10
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1013487118144885271
+    second: play-cut_0
+  - first:
+      213: -2691871390450476255
+    second: play-cut_1
+  - first:
+      213: 6339918476834739097
+    second: play-cut_2
+  - first:
+      213: 3630558286442429772
+    second: play-cut_3
+  - first:
+      213: -6451415886182535428
+    second: play-cut_4
+  - first:
+      213: 1324861849172569248
+    second: play-cut_5
+  - first:
+      213: -403511319451482427
+    second: play-cut_6
+  - first:
+      213: -208445563707122878
+    second: play-cut_7
+  - first:
+      213: 222205149068093197
+    second: play-cut_8
+  - first:
+      213: -6950226350505382042
+    second: play-cut_9
+  - first:
+      213: -7496781903255868512
+    second: play-cut_10
+  - first:
+      213: -8538232949169344459
+    second: play-cut_11
+  - first:
+      213: -6482035532898690972
+    second: play-cut_12
+  - first:
+      213: -5593182341522771859
+    second: play-cut_13
+  - first:
+      213: -8666722094312491150
+    second: play-cut_14
+  - first:
+      213: 7422584286924221543
+    second: play-cut_15
+  - first:
+      213: 4188987582724671015
+    second: play-cut_16
+  - first:
+      213: 8050944220393765035
+    second: play-cut_17
+  - first:
+      213: -3267003792145092290
+    second: play-cut_18
+  - first:
+      213: -3257958687062083256
+    second: play-cut_19
+  - first:
+      213: 3658658209831258296
+    second: play-cut_20
+  - first:
+      213: 812102071364222555
+    second: play-cut_21
+  - first:
+      213: 5807482622097871483
+    second: play-cut_22
+  - first:
+      213: -4397846394077136665
+    second: play-cut_23
+  - first:
+      213: 4976741217637501023
+    second: play-cut_24
+  - first:
+      213: -5647799624646881294
+    second: play-cut_25
+  - first:
+      213: -476021330321046137
+    second: play-cut_26
+  - first:
+      213: -6233547724003799187
+    second: play-cut_27
+  - first:
+      213: 3147711221338541567
+    second: play-cut_28
+  - first:
+      213: 5704746068767470728
+    second: play-cut_29
+  - first:
+      213: 2125165663718137820
+    second: play-cut_30
+  - first:
+      213: -5779770120163656740
+    second: play-cut_31
+  - first:
+      213: 8875650197301060061
+    second: play-cut_34
+  - first:
+      213: 3623492121198821217
+    second: play-cut_35
+  - first:
+      213: -2835391950218405442
+    second: play-cut_37
+  - first:
+      213: 4789865222796823471
+    second: play-cut_38
+  - first:
+      213: 1086457631610415707
+    second: play-cut_39
+  - first:
+      213: -7812166944808835092
+    second: play-cut_40
+  - first:
+      213: 554612661362087666
+    second: play-cut_41
+  - first:
+      213: -9146022223720926769
+    second: play-cut_42
+  - first:
+      213: 7941692313051112168
+    second: play-cut_43
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: 13
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: 29
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: play-cut_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 657
+        width: 254
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be3b43e59a4e8f448ffa479c323a884
+      internalID: 1013487118144885271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_1
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 626
+        width: 68
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e285989d69b6a40908830b783ee9f4
+      internalID: -2691871390450476255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_2
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 631
+        width: 66
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d94af26a74ecb44698d3b39fb20f90d
+      internalID: 6339918476834739097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_3
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 280
+        width: 416
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4a3aaa34c61223469ff699b954107f9
+      internalID: 3630558286442429772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_4
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 615
+        width: 254
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ed7f84cd6dd79449841140bd6aff19
+      internalID: -6451415886182535428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_5
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 547
+        width: 68
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5044cc63d31b2fa4689fa8ee16cbc782
+      internalID: 1324861849172569248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_6
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 562
+        width: 8
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51c2186f42a40da4b9fbbafda95a1c5c
+      internalID: -403511319451482427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_7
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 562
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d04f29baeb6916944a27759b2c2b7ef9
+      internalID: -208445563707122878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_8
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 562
+        width: 9
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d854dee6803316543a9abb9346a0e9a2
+      internalID: 222205149068093197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_9
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 563
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb7f93f434c0db541a48d0b9e88008f7
+      internalID: -6950226350505382042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 560
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dcdc4bdddd6d384f969c2d557caa133
+      internalID: -7496781903255868512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_11
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 559
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c574a1938ab864fa22398adc222080
+      internalID: -8538232949169344459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_12
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 563
+        width: 37
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c002a180f3b907541b4cb091c55f42b1
+      internalID: -6482035532898690972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_13
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 542
+        width: 66
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71e3f410243878542aa19d395b42b46d
+      internalID: -5593182341522771859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_14
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 501
+        width: 8
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c25739a0d7ee3d24e9df0e4a0b7f8cda
+      internalID: -8666722094312491150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_15
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 501
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c53fe4d2c2554484bab28d73a8cbf443
+      internalID: 7422584286924221543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_16
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 501
+        width: 9
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53e42ce460001bc42a52cdd6d044d2f4
+      internalID: 4188987582724671015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_17
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 502
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6637663cd104ae3459de0d38258f3af3
+      internalID: 8050944220393765035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_18
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 499
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1139bf0ac3b20614588fe4a52e1f6bec
+      internalID: -3267003792145092290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_19
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 498
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32ec5a620f861d54b85cf45329fa5a58
+      internalID: -3257958687062083256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_20
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 502
+        width: 37
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee5776ff6c4133e4fbe37c53a5b4a031
+      internalID: 3658658209831258296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_21
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 471
+        width: 68
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4851ceb9fe1ce524c85c53596edf8d4b
+      internalID: 812102071364222555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_22
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 447
+        width: 66
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bdb6c516aea10049ad877ad3f40c937
+      internalID: 5807482622097871483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_23
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 414
+        width: 66
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a45923ad4b62d36439df1749aa7b0908
+      internalID: -4397846394077136665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_24
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 338
+        width: 143
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e281b0c8bb0d3d4ca43c4f3cae61795
+      internalID: 4976741217637501023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_25
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 375
+        width: 75
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a483e03b3e16e04d9881f0bcfab17d2
+      internalID: -5647799624646881294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_26
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 335
+        width: 66
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 136492a43875c9a40a1bb81294423c4a
+      internalID: -476021330321046137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_27
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 349
+        width: 66
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e1a8737fc22e7438cbad0749477bbc
+      internalID: -6233547724003799187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_28
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 197
+        width: 19
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99fd07206d1301b4cb155dc90186551c
+      internalID: 3147711221338541567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_29
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 197
+        width: 76
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bfc80ab68ba5d34584ac1864889ed27
+      internalID: 5704746068767470728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_30
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 197
+        width: 20
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3353d3e28b174454dac0ae5db0aa3594
+      internalID: 2125165663718137820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_31
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 192
+        width: 122
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c42c5d5ed29d79498cb9bda40eb2fec
+      internalID: -5779770120163656740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_34
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 191
+        width: 130
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29a06a5cbecaf54409cede65db0faaca
+      internalID: 8875650197301060061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_35
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 273
+        width: 37
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7afd4850ee5c8414d9d172ab6c5a9ca2
+      internalID: 3623492121198821217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_37
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 172
+        width: 46
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d6f5f939433cbb41b05d059c5f45375
+      internalID: -2835391950218405442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_38
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 172
+        width: 46
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d255ed6787883894c99368f133138d7d
+      internalID: 4789865222796823471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_39
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 25
+        width: 241
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1e56eaf6402f194ba3433c54188d020
+      internalID: 1086457631610415707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_40
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 27
+        width: 101
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13446401fd8f26a4eae61e088d67803b
+      internalID: -7812166944808835092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_41
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 25
+        width: 112
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdae4d2e30aac0444a5b48bdf001487a
+      internalID: 554612661362087666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_42
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 30
+        width: 121
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d928a46ae9d4f7459b7695dd5e02a81
+      internalID: -9146022223720926769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: play-cut_43
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 37
+        width: 137
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bdec2c4c100342489220bb3be68f2bc
+      internalID: 7941692313051112168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
