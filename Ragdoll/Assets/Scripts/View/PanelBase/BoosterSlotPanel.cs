@@ -39,7 +39,6 @@ public class BoosterSlotPanel : _PanelSetup<BoosterSlot, BoosterStat>
     }
     public void PickBooster(_ActionSlotSetup<BoosterSlot, BoosterStat> Booster)
     {
-        Debug.Log("run");
         if(Booster != null && Booster is BoosterSlot)
         {
             BoosterSlot boosterSlot = Booster as BoosterSlot;

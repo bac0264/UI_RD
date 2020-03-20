@@ -24,8 +24,6 @@ public class _ActionSlotSetup<T,T1> : EnhancedScrollerCellView, IPointerClickHan
 
     public void OnPointerClick(PointerEventData eventData)
     {
-       // Debug.Log(this);
-        Debug.Log(OnRightClickEvent);
         if (eventData != null && (eventData.button == PointerEventData.InputButton.Right || eventData.clickCount > 0))
         {
             if (OnRightClickEvent != null && this != null)

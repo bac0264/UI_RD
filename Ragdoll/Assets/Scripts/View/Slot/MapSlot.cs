@@ -47,18 +47,23 @@ public class MapSlot : _ActionSlotSetup<MapSlot, MapDataStat>
     }
     public bool PickLevel()
     {
-        if(DATA != null)
+        if(DATA != null && DATA.IS_OPEN)
         {
+            DATA.STAR = Random.Range(1, 4);
+            DATA = DATA;
+            mapManager.SetupNextLevel(DATA);
+            if (MapEnhance.instance != null) MapEnhance.instance.masterScroller.ReloadData();
             if (mapManager != null)
             {
-                mapManager.CUR_LEVEL = DATA;
-                return true;
+               // mapManager.CUR_MAP = DATA;
+              //  mapManager.SaveMaps();
             }
             else
             {
-                DIContainer.GetModule<IMapManager>().CUR_LEVEL = DATA;
-                return true;
+                //DIContainer.GetModule<IMapManager>().CUR_MAP = DATA;
+               // DIContainer.GetModule<IMapManager>().SaveMaps();
             }
+            return true;
         }
         return false;
     }

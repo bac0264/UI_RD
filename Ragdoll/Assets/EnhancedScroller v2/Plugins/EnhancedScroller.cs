@@ -1214,8 +1214,6 @@ namespace EnhancedUI.EnhancedScroller
             {
                 if (_activeCellViews[i].cellIndex < startIndex || _activeCellViews[i].cellIndex > endIndex)
                 {
-                    Debug.Log(_activeCellViews[0].cellIndex);
-                    Debug.Log(startIndex);
                     _RecycleCell(_activeCellViews[i]);
                 }
                 else
@@ -1501,7 +1499,7 @@ namespace EnhancedUI.EnhancedScroller
             // one at design time because Unity gives errors if it can't find one.
             if (_scrollRect.content != null)
             {
-                DestroyImmediate(_scrollRect.content.gameObject);
+                Destroy(_scrollRect.content.gameObject);
             }
 
             // Create a new active cell view container with a layout group

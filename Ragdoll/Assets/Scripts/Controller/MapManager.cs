@@ -11,14 +11,14 @@ public class MapManager : IMapManager
         this.dataService = dataService;
         LoadMaps();
     }
-    public MapDataStat HIGHEST_LEVEL
+    public MapDataStat HIGHEST_MAP
     {
         get
         {
             return JsonUtility.FromJson<MapDataStat>(PlayerPrefs.GetString("HighestMap"));
         }
     }
-    public MapDataStat CUR_LEVEL
+    public MapDataStat CUR_MAP
     {
         get
         {
@@ -32,7 +32,7 @@ public class MapManager : IMapManager
                 if (currentLevel != null)
                 {
                     PlayerPrefs.SetString("CurrentMap", JsonUtility.ToJson(currentLevel));
-                    MapDataStat highest = HIGHEST_LEVEL;
+                    MapDataStat highest = HIGHEST_MAP;
                     if (highest == null || highest.ID < currentLevel.ID)
                     {
                         PlayerPrefs.SetString("HighestMap", JsonUtility.ToJson(currentLevel));
@@ -60,7 +60,7 @@ public class MapManager : IMapManager
         {
             if (dataSave.results.Count > 0)
             {
-                CUR_LEVEL = dataSave.results[0];
+                CUR_MAP = dataSave.results[0];
             }
         }
     }
@@ -69,4 +69,17 @@ public class MapManager : IMapManager
         dataService.Save<MapDataStat>();
     }
 
+    public bool SetupNextLevel(MapDataStat cur)
+    {
+        if (cur.ID >= dataSave.results[dataSave.results.Count - 1].ID || cur.ID < HIGHEST_MAP.ID)
+        {
+            CUR_MAP = cur;
+            return false;
+        }
+        MapDataStat next = GetMapWithID(cur.ID + 1);
+        next.IS_OPEN = true;
+        CUR_MAP = next;
+        SaveMaps();
+        return true;
+    }
 }

@@ -5,7 +5,7 @@ public class MapPanel : _PanelSetup<MapSlot, MapDataStat>
 {
     public MapEnhance enhance;
     IMapManager mapManager;
-
+    StoryModePanel storyMode;
     private void Start()
     {
         StartCoroutine(SetupEvent());
@@ -18,6 +18,12 @@ public class MapPanel : _PanelSetup<MapSlot, MapDataStat>
     {
         yield return new WaitForSeconds(0.05f);
         SlotListManager.SetupEvent();
+        if (SlotListManager is MapSlotList)
+        {
+            Debug.Log("run");
+            MapSlotList slotList = SlotListManager as MapSlotList;
+            slotList.SetupMapManager(mapManager);
+        }
     }
     public void PickLevel(_ActionSlotSetup<MapSlot, MapDataStat> data)
     {
@@ -26,7 +32,7 @@ public class MapPanel : _PanelSetup<MapSlot, MapDataStat>
             MapSlot _data = data as MapSlot;
             if(_data != null && _data.PickLevel())
             {
-
+                if (storyMode != null && storyMode.container != null) storyMode.container.PickLevel();
             }
             else
             {
@@ -34,11 +40,13 @@ public class MapPanel : _PanelSetup<MapSlot, MapDataStat>
             }
         }
     }
-    public void SetupAll(IMapManager mapManager)
-    { 
+    public void SetupAll(IMapManager mapManager, StoryModePanel storyMode)
+    {
+        this.storyMode = storyMode;
         this.mapManager = mapManager;
         if(SlotListManager is MapSlotList)
         {
+            Debug.Log("run");
             MapSlotList slotList = SlotListManager as MapSlotList;
             slotList.SetupMapManager(mapManager);
         }

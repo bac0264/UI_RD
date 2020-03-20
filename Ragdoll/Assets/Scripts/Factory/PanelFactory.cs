@@ -13,11 +13,11 @@ public class PanelFactory : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(instance);
+          //  DontDestroyOnLoad(instance);
         }
         else
         {
-            Destroy(this);
+          //  Destroy(this);
         }
     }
 
