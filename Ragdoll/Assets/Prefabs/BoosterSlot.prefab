@@ -718,6 +718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 385c5da862de6c04c87625f74ee83942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cellIdentifier: 
   TXT_VALUE: {fileID: 5168494709058249672}
   IMG_ICON: {fileID: 5168494708403506919}
   IMG_BG: {fileID: 3564204755323821186}

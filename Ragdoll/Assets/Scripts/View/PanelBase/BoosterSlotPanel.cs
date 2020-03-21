@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class BoosterSlotPanel : _PanelSetup<BoosterSlot, BoosterStat>
 {
-    IBoosterManager BoosterManager;
-    public void SetupAll(IBoosterManager BoosterManager)
+    public IBoosterManager BoosterManager;
+    public virtual void SetupAll(IBoosterManager BoosterManager)
     {
         this.BoosterManager = BoosterManager;
         List<BoosterStat> BoosterNeeds = new List<BoosterStat>();
@@ -37,7 +37,7 @@ public class BoosterSlotPanel : _PanelSetup<BoosterSlot, BoosterStat>
     {
         base.Setup(dataBase);
     }
-    public void PickBooster(_ActionSlotSetup<BoosterSlot, BoosterStat> Booster)
+    void PickBooster(_ActionSlotSetup<BoosterSlot, BoosterStat> Booster)
     {
         if(Booster != null && Booster is BoosterSlot)
         {

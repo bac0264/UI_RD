@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
 {
-    IBoosterManager boosterManager;
+    public IBoosterManager boosterManager;
     public Button Buy;
     public Button Free;
     public GameObject IsPick;
@@ -26,7 +26,7 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
             }
         }
     }
-    public void SetupBoosterManager(IBoosterManager boosterManager)
+    public virtual void SetupBoosterManager(IBoosterManager boosterManager)
     {
         this.boosterManager = boosterManager;
     }
@@ -37,8 +37,9 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
     }
     // Pick booster
     #region
-    public void PickBooster()
+    public virtual void PickBooster()
     {
+        Debug.Log("run");
         if (DATA != null && DATA.VALUE > 0)
         {
             if (DATA.IsPick) DATA.IsPick = false;
@@ -52,7 +53,7 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
     #endregion
     // Buy Button
     #region
-    public void SetupBuyBtn()
+    void SetupBuyBtn()
     {
         Buy.onClick.RemoveAllListeners();
         Buy.onClick.AddListener(delegate
@@ -60,7 +61,7 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
             BuyBtn();
         });
     }
-    public void BuyBtn()
+    void BuyBtn()
     {
         if (DATA.AddPrice(1))
         {
@@ -73,7 +74,7 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
     #endregion
     // FREE Button
     #region
-    public void SetupFreeBtn()
+    void SetupFreeBtn()
     {
         Free.onClick.RemoveAllListeners();
         Free.onClick.AddListener(delegate
@@ -81,7 +82,7 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
             FreeBtn();
         });
     }
-    public void FreeBtn()
+    void FreeBtn()
     {
         if (DATA.AddPrice(1))
         {

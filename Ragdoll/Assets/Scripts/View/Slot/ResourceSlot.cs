@@ -4,6 +4,12 @@ using UnityEngine.EventSystems;
 
 public class ResourceSlot : _ActionSlotSetup<ResourceSlot,ResourceStat>
 {
+    public IResourceManager resourceManager;
+
+    public virtual void Setup(IResourceManager resourceManager)
+    {
+        this.resourceManager = resourceManager;
+    }
     public override ResourceStat DATA
     {
         get => base.DATA;
