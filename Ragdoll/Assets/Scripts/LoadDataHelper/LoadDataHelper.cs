@@ -12,6 +12,9 @@ public class LoadDataHelper : MonoBehaviour
 
     public TextAsset DataCharacterUnlock;
     public SO_CharacterUnlock soCharacter;
+
+    public TextAsset dataGold;
+    public SO_GoldShop soGoldShop;
     public void LoadData()
     {
         var _dataSpin = CSVReader.Read(dataSpin);
@@ -22,6 +25,9 @@ public class LoadDataHelper : MonoBehaviour
 
         var _DataCharacterUnlock = CSVReader.Read(DataCharacterUnlock);
         soCharacter.LoadUpgradeCharacter(_DataCharacterUnlock);
+
+        var _dataGoldShop = CSVReader.Read(dataGold);
+        soGoldShop.LoadResources(_dataGoldShop);
     }
 
 }

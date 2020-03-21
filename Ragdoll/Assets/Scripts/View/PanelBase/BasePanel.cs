@@ -6,6 +6,8 @@ public enum PanelType
     StoryModePanel = 1,
     CharacterPanel = 2,
     BoosterPanel = 3,
+    ShopPanel = 4,
+    ShopResourcePanel = 5,
 }
 public class BasePanel : MonoBehaviour
 {

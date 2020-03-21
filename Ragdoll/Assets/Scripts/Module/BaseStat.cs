@@ -5,7 +5,8 @@ using System.Collections.Generic;
 [System.Serializable]
 public class BaseStat
 {
-    public enum Type{
+    public enum Type
+    {
         ResourceStat,
         BoosterStat,
         CharacterStat,
@@ -23,10 +24,14 @@ public class BaseStat
     }
     public BaseStat(Dictionary<string, string> data)
     {
-        int.TryParse(data["ID"], out ID);
-        long.TryParse(data["VALUE"], out VALUE);
-        int.TryParse(data["TYPE"], out TYPE);
-        NAME = data["NAME"];
+        if (data.ContainsKey("ID"))
+            int.TryParse(data["ID"], out ID);
+        if (data.ContainsKey("VALUE"))
+            long.TryParse(data["VALUE"], out VALUE);
+        if (data.ContainsKey("TYPE"))
+            int.TryParse(data["TYPE"], out TYPE);
+        if (data.ContainsKey("NAME"))
+            NAME = data["NAME"];
     }
 
 

@@ -22,12 +22,8 @@ public class BoosterSlotPanel : _PanelSetup<BoosterSlot, BoosterStat>
                 BoosterNeeds.Add(BoosterManager.GetBoosterList()[IndexBoosterNeeds[i]]);
             }
         }
-        if (SlotListManager is BoosterSlotList)
-        {
-            BoosterSlotList slotList = SlotListManager as BoosterSlotList;
-            slotList.SetupBoosterManager(BoosterManager);
-        }
         Setup(BoosterNeeds.ToArray());
+        SlotListManager.GetType<BoosterSlotList>().SetupBoosterManager(BoosterManager);
     }
     private void Awake()
     {

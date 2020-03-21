@@ -13,6 +13,11 @@ public class _SlotListSetup<T, T1> : MonoBehaviour
     {
         SetupEvent();
     }
+
+    public T2 GetType<T2>()
+    {
+        return (T2)(object)this;
+    }
     public virtual void OnValidate()
     {
         if (slotList == null || slotList.Length == 0) slotList = GetComponentsInChildren<_ActionSlotSetup<T, T1>>();
