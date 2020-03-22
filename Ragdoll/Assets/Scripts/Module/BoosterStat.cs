@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class BoosterStat : BaseStat
@@ -22,11 +23,18 @@ public class BoosterStat : BaseStat
         NAME = Type.BoosterStat.ToString();
         IsPick = false;
     }
-    public override bool AddPrice(long value = 0)
+    public BoosterStat(Dictionary<string, string> data) : base(data)
     {
-        if (value > 0)
+        NAME = Type.BoosterStat.ToString();
+        this.TYPE = (int)Type.BoosterStat;
+    }
+    public override bool AddPrice()
+    {
+        if (VALUE > 0)
         {
-            VALUE += value;
+            IBoosterManager booster = DIContainer.GetModule<IBoosterManager>();
+            booster.GetBoosterWithID(ID).VALUE += VALUE;
+            booster.SaveBoosters();
             return true;
         }
         return false;

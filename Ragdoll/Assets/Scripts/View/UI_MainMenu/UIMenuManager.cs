@@ -50,7 +50,14 @@ public class UIMenuManager : MonoBehaviour
     #region
     public void _Shop()
     {
+        StartCoroutine(Shop());
+    }
 
+    IEnumerator Shop()
+    {
+        HideMenu();
+        yield return new WaitUntil(() => IsHide);
+        if (PanelFactory.instance != null) PanelFactory.instance.ShowPanel(PanelType.ShopPanel);
     }
     #endregion
     // Daily Gift

@@ -93,6 +93,9 @@ MonoBehaviour:
   - {fileID: -6684006509603013795, guid: f71d2f830a1ac054ab1795f7f9cb91a5, type: 3}
   - {fileID: -6684006509603013795, guid: f71d2f830a1ac054ab1795f7f9cb91a5, type: 3}
   - {fileID: -6684006509603013795, guid: f71d2f830a1ac054ab1795f7f9cb91a5, type: 3}
+  iconPacks:
+  - {fileID: 21300000, guid: 07639f9625f6b2b43948a98c68d9b4cf, type: 3}
+  - {fileID: 21300000, guid: 3f0adc84b76361d4295a2e6bce6ca336, type: 3}
   mapData:
     Open: {fileID: 2376232022617226042, guid: 2371e9e32281d8345a6ccad9ac596846, type: 3}
     Hide: {fileID: 2349048481594507135, guid: 2371e9e32281d8345a6ccad9ac596846, type: 3}

@@ -71,8 +71,15 @@ public class StoryModePanel : BasePanel
     }
     public override void ShowPanel()
     {
-        if (boosterManager != null && characterManager != null && resourceManager != null) RefreshUI();
-        SetLevelText();
+        if (boosterManager != null && characterManager != null && resourceManager != null)
+        {
+            SetupData();
+            SetLevelText();
+            RefreshUI();
+        }
+        else
+        {
+        }
         base.ShowPanel();
     }
     public override void ShowKey()

@@ -24,19 +24,23 @@ public class _SlotListSetup<T, T1> : MonoBehaviour
     }
     public virtual void Setup(T1[] dataBase = null)
     {
+        Debug.Log("run");
         if (slotList == null || slotList.Length == 0)
         {
             slotList = GetComponentsInChildren<_ActionSlotSetup<T, T1>>();
         }
+        Debug.Log("run");
         if (dataBase != null) SetupSlotList(dataBase);
     }
     void SetupSlotList(T1[] dataBase)
     {
+        Debug.Log("run");
         if (dataBase == null) return;
         int i = 0;
         for (; i < dataBase.Length && i < slotList.Length; i++)
         {
             slotList[i].DATA = dataBase[i];
+            Debug.Log(JsonUtility.ToJson(slotList[i].DATA));
             slotList[i].gameObject.SetActive(true);
         }
         for (; i < slotList.Length; i++)
@@ -47,7 +51,7 @@ public class _SlotListSetup<T, T1> : MonoBehaviour
     public virtual void SetupEvent()
     {
         int i = 0;
-        if (slotList.Length == 0)
+        if (slotList == null || slotList.Length == 0)
             slotList = GetComponentsInChildren<_ActionSlotSetup<T, T1>>();
         for (; i < slotList.Length; i++)
         {

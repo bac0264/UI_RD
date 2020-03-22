@@ -12,20 +12,12 @@ public class BoosterSlotPanel : _PanelSetup<BoosterSlot, BoosterStat>
         int[] IndexBoosterNeeds = new int[] { 3,1,2 };
         for (int i = 0; i < IndexBoosterNeeds.Length; i++)
         {
-            if (IndexBoosterNeeds[i] < BoosterManager.GetBoosterList().Length)
-            {
-                BoosterNeeds.Add(BoosterManager.GetBoosterList()[IndexBoosterNeeds[i]]);
-            }
-            else
-            {
-                IndexBoosterNeeds[i] = BoosterManager.GetBoosterList().Length - 1;
-                BoosterNeeds.Add(BoosterManager.GetBoosterList()[IndexBoosterNeeds[i]]);
-            }
+            BoosterNeeds.Add(BoosterManager.GetBoosterWithID(IndexBoosterNeeds[i]));
         }
         Setup(BoosterNeeds.ToArray());
         SlotListManager.GetType<BoosterSlotList>().SetupBoosterManager(BoosterManager);
     }
-    private void Awake()
+    public virtual void Awake()
     {
         SlotListManager.OnRightClick += PickBooster;
     }

@@ -6,8 +6,8 @@ using System;
 public class PopupFactory : MonoBehaviour
 {
     public static PopupFactory instance;
-    private Transform container;
-    Dictionary<string, BasePopup> PopupList = new Dictionary<string, BasePopup>();
+    //private Transform container;
+    Dictionary<string, BasePopupSimple> PopupList = new Dictionary<string, BasePopupSimple>();
     private void Awake()
     {
         if (instance == null)
@@ -23,38 +23,42 @@ public class PopupFactory : MonoBehaviour
 
     public void UpdateContainer()
     {
-      //  if (container == null) container = GameObject.FindGameObjectWithTag(KeySave.CONTAINER_POPUP).transform;
+       // if (container == null) container = GameObject.FindGameObjectWithTag(Ke).transform;
     }
 
-    public bool ShowPopup<T,T1>(BasePopup.TypeOfPopup type, string message = null, _ActionSlotSetup<T,T1> slot = null)
+    public bool ShowPopup<T>(TypeOfPopup type, T slot = default, List<T> slots = null, string message = null)
     {
         if (PopupList.ContainsKey(type.ToString()))
         {
-            BasePopup popup = PopupList[type.ToString()];
-            popup.SetupData(slot);
-            popup.ShowPopup();         
+            BasePopupSimple popup = PopupList[type.ToString()];
+            BasePopup<T> _popup = popup as BasePopup<T>;
+            _popup.SetupData(slot, slots);
+            _popup.transform.SetAsLastSibling();
+            _popup.ShowPopup();
+            return true;
         }
-        bool check = InitPopup<T,T1>(type);
+        bool check = InitPopup(type, slot, slots);
         return check;
     }
-    public BasePopup GetPopup(BasePopup.TypeOfPopup type)
-    {
+    //public BasePopup GetPopup(TypeOfPopup type)
+    //{
 
-        return null;
-    }
-    public bool InitPopup<T,T1>(BasePopup.TypeOfPopup type, _ActionSlotSetup<T, T1> slot = null)
+    //    return null;
+    //}
+    public bool InitPopup<T>(TypeOfPopup type, T slot,List<T> slots = null)
     {
-        UpdateContainer();
-        BasePopup popupNeed = Resources.Load<BasePopup>("Popup/" + type.ToString());
+        // UpdateContainer();
+        BasePopupSimple popupNeed = Resources.Load<BasePopupSimple>("Popup/" + type.ToString());
         if (popupNeed == null) return false;
-        GameObject obj = Instantiate(popupNeed.gameObject, container);
-        BasePopup popup = obj.GetComponent<BasePopup>();
+        GameObject obj = Instantiate(popupNeed.gameObject, transform);
+        BasePopupSimple popup = obj.GetComponent<BasePopupSimple>();
         if (popup != null)
         {
             PopupList.Add(popup.type.ToString(), popup);
-            popup.transform.SetAsLastSibling();
-            popup.ShowPopup();
-            popup.SetupData(slot);
+            BasePopup<T> _popup = popup as BasePopup<T>;
+            _popup.SetupData(slot, slots);
+            _popup.transform.SetAsLastSibling();
+            _popup.ShowPopup();
             return true;
         }
         return false;

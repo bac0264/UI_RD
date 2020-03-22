@@ -39,7 +39,7 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
     #region
     public virtual void PickBooster()
     {
-        Debug.Log("run");
+        //.Log("run");
         if (DATA != null && DATA.VALUE > 0)
         {
             if (DATA.IsPick) DATA.IsPick = false;
@@ -63,7 +63,7 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
     }
     void BuyBtn()
     {
-        if (DATA.AddPrice(1))
+        if (DATA.AddValue(1))
         {
             DATA = DATA;
             if (boosterManager != null)
@@ -84,7 +84,7 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
     }
     void FreeBtn()
     {
-        if (DATA.AddPrice(1))
+        if (DATA.AddValue(1))
         {
             DATA = DATA;
             if (boosterManager != null)

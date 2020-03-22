@@ -23,7 +23,7 @@ public class PanelFactory : MonoBehaviour
 
     public void UpdateContainer()
     {
-        if (container == null) container = GameObject.FindGameObjectWithTag("UIFunctionContainer").transform;
+     //   if (container == null) container = GameObject.FindGameObjectWithTag("UIFunctionContainer").transform;
     }
 
     public bool ShowPanel(PanelType type, string message = null)
@@ -31,24 +31,25 @@ public class PanelFactory : MonoBehaviour
         if (panelList.ContainsKey(type.ToString()))
         {
             BasePanel panel = panelList[type.ToString()];
-           // panel.Setup();
+            panel.transform.SetAsLastSibling();
+            // panel.Setup();
             panel.ShowPanel();
             return true;
         }
         bool check = InitPanel(type);
         return check;
     }
-    public BasePopup GetPopup(BasePopup.TypeOfPopup type)
-    {
+    //public BasePopup GetPopup(BasePopup.TypeOfPopup type)
+    //{
 
-        return null;
-    }
+    //    return null;
+    //}
     public bool InitPanel(PanelType type)
     {
-        UpdateContainer();
+      //  UpdateContainer();
         BasePanel panelNeed = Resources.Load<BasePanel>("Panel/" + type.ToString());
         if (panelNeed == null) return false;
-        GameObject obj = Instantiate(panelNeed.gameObject, container);
+        GameObject obj = Instantiate(panelNeed.gameObject, transform);
         BasePanel panel = obj.GetComponent< BasePanel>();
         if (panel != null)
         {

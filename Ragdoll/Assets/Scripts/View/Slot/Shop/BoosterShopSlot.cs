@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class ResourceShopSlot : ResourceSlot
+public class BoosterShopSlot : BoosterSlot
 {
     public Text IAP;
     public Button BuyIAP;
@@ -10,22 +10,22 @@ public class ResourceShopSlot : ResourceSlot
     {
         SetupBtnIAP();
     }
-    public override ResourceStat DATA
+    public override BoosterStat DATA
     {
         get => base.DATA;
         set
         {
             base.DATA = value;
-            if (DATA is ResourceShopStat)
+            if (DATA is BoosterShopStat)
             {
-                ResourceShopStat data = DATA as ResourceShopStat;
+                BoosterShopStat data = DATA as BoosterShopStat;
                 if (IAP != null) IAP.text = data.IAP;
             }
         }
     }
-    public override void SetupResourceManager(IResourceManager resourceManager)
+    public override void SetupBoosterManager(IBoosterManager boosterManager)
     {
-        base.SetupResourceManager(resourceManager);
+        base.SetupBoosterManager(boosterManager);
     }
     void SetupBtnIAP()
     {
@@ -37,11 +37,11 @@ public class ResourceShopSlot : ResourceSlot
     }
     public void Recieve()
     {
-        if (resourceManager != null)
+        if (boosterManager != null && DATA != null)
         {
-            resourceManager.GetResourceWithID(DATA.ID).AddValue(DATA.VALUE);
-            resourceManager.SaveResources();
-            if (PopupFactory.instance != null)
+            boosterManager.GetBoosterWithID(DATA.ID).AddValue(DATA.VALUE);
+            boosterManager.SaveBoosters();
+            if (PopupFactory.instance != null) 
                 PopupFactory.instance.ShowPopup<BaseStat>(TypeOfPopup.ShopPopup, DATA);
         }
     }

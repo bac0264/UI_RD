@@ -41,9 +41,21 @@ public class CharacterStat : BaseStat
         LEVEL = 0;
         TYPE = (int)Type.CharacterStat;
         ID = (int)type;
-        IsBought = this.IsBought;
+        this.IsBought = IsBought;
         // IsUsed = this.IsUsed;
         NAME = Type.CharacterStat.ToString();
         VideoUnlock = 0;
+    }
+
+    public override bool AddPrice()
+    {
+        if (!IsBought)
+        {
+            ICharacterManager character = DIContainer.GetModule<ICharacterManager>();
+            character.GetCharacterWithID(ID).IsBought = true;
+            character.SaveCharacters();
+            return true;
+        }
+        return false;
     }
 }

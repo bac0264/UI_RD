@@ -18,9 +18,18 @@ public class ResourceStat : BaseStat
     }
     public ResourceStat(Dictionary<string, string> data) : base(data)
     {
+        NAME = Type.ResourceStat.ToString();
+        this.TYPE = (int)Type.ResourceStat;
     }
-    //    public override AddPrice(IResourceManager irm)
-    //    {
-
-    //    }
+    public override bool AddPrice()
+    {
+        if (VALUE > 0)
+        {
+            IResourceManager resourceManager = DIContainer.GetModule<IResourceManager>();
+            resourceManager.GetResourceWithID(ID).VALUE += VALUE;
+            resourceManager.SaveResources();
+            return true;
+        }
+        return false;
+    }
 }

@@ -1,0 +1,3 @@
+ID,PACK,IAP,CODE
+0,[{_NAME_:_BoosterStat_;_TYPE_:1;_ID_:1;_VALUE_:5};{_NAME_:_CharacterStat_;_TYPE_:2;_ID_:10;_VALUE_:1};{_NAME_:_ResourceStat_;_TYPE_:0;_ID_:0;_VALUE_:10000}],1.99$,buyidstarter
+1,[{_NAME_:_BoosterStat_;_TYPE_:1;_ID_:0;_VALUE_:5};{_NAME_:_BoosterStat_;_TYPE_:1;_ID_:1;_VALUE_:5};{_NAME_:_BoosterStat_;_TYPE_:1;_ID_:2;_VALUE_:5};{_NAME_:_BoosterStat_;_TYPE_:1;_ID_:3;_VALUE_:5};{_NAME_:_BoosterStat_;_TYPE_:1;_ID_:4;_VALUE_:5};{_NAME_:_BoosterStat_;_TYPE_:1;_ID_:5;_VALUE_:5};{_NAME_:_BoosterStat_;_TYPE_:1;_ID_:6;_VALUE_:5}],1.99$,buyidboostpack

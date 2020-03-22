@@ -10,6 +10,10 @@ public class SpriteDB : MonoBehaviour
     {
         if (Instance == null) Instance = this;
     }
+    public Sprite GetPackIconInShop(int ID)
+    {
+        return spriteDB.GetIconPack(ID);
+    }
     public Sprite GetBackgroundInMap(bool IsOpen = false)
     {
         return spriteDB.mapData.GetBackground(IsOpen);

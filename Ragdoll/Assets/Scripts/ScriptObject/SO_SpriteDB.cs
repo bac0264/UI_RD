@@ -7,7 +7,16 @@ public class SO_SpriteDB : ScriptableObject
     public List<IconList> iconList;
     public List<BackgroundList> backgroundList;
     public List<Sprite> iconBoosterInStoryMode;
+    public List<Sprite> iconPacks;
     public MapSpriteList mapData;
+    public Sprite GetIconPack(int id)
+    {
+        if(id < iconPacks.Count)
+        {
+            return iconPacks[id];
+        }
+        return null;
+    }
     public Sprite GetIcon(int TYPE, int ID)
     {
         if (TYPE >= iconList.Count) return null;
