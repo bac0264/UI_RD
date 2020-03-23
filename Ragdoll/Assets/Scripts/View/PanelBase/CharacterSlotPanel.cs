@@ -128,22 +128,31 @@ public class CharacterSlotPanel : _PanelSetup<CharacterSlot, CharacterStat>
     public void Upgrade()
     {
         if (currrentCharacter.LEVEL >= (MAX + currrentCharacter.ID)) return;
-        resourceManager.GetResourceWithID((int)ResourceStat.TypeOfResource.GOLD).AddValue(dataUpgradeCharacter.GOLD);
+      //  resourceManager.GetResourceWithID((int)ResourceStat.TypeOfResource.GOLD).AddValue(dataUpgradeCharacter.GOLD);
         if (resourceManager.GetResourceWithID((int)ResourceStat.TypeOfResource.GOLD).ReduceValue(dataUpgradeCharacter.GOLD))
         {
             currrentCharacter.LEVEL++;
             characterManager.SaveCharacters();
             resourceManager.SaveResources();
+            if (UpgradeHeroPooling.instance != null) UpgradeHeroPooling.instance.getObjectPooling();
+        }
+        else
+        {
+            if (NotEnoughGoldPooling.instance != null) NotEnoughGoldPooling.instance.getObjectPooling(GOLD_UPGRADE_VALUE.transform);
         }
     }
     public void Unlock()
     {
-        resourceManager.GetResourceWithID((int)ResourceStat.TypeOfResource.GOLD).AddValue(dataCharacterUnlock.GOLD_UNLOCK);
+      //  resourceManager.GetResourceWithID((int)ResourceStat.TypeOfResource.GOLD).AddValue(dataCharacterUnlock.GOLD_UNLOCK);
         if (resourceManager.GetResourceWithID((int)ResourceStat.TypeOfResource.GOLD).ReduceValue(dataCharacterUnlock.GOLD_UNLOCK))
         {
             currrentCharacter.IsBought = true;
             characterManager.SaveCharacters();
             resourceManager.SaveResources();
+        }
+        else
+        {
+            if (NotEnoughGoldPooling.instance != null) NotEnoughGoldPooling.instance.getObjectPooling(GOLD_VALUE.transform);
         }
     }
 

@@ -6,7 +6,7 @@ public class ShopBoosterPanel : BoosterSlotPanel
     public SO_BoosterShop soBooster;
     public override void Awake()
     {
-        
+
     }
     public override void OnValidate()
     {
@@ -16,7 +16,7 @@ public class ShopBoosterPanel : BoosterSlotPanel
     {
         base.Setup(dataBase);
     }
-    public override void SetupAll(IBoosterManager BoosterManager)
+    public override void SetupAll(IBoosterManager BoosterManager, IResourceManager resourceManager = null)
     {
         Setup(soBooster.boosterList.ToArray());
         SlotListManager.GetType<BoosterSlotList>().SetupBoosterManager(BoosterManager);

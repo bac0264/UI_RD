@@ -24,17 +24,17 @@ public class _SlotListSetup<T, T1> : MonoBehaviour
     }
     public virtual void Setup(T1[] dataBase = null)
     {
-        Debug.Log("run");
+       // Debug.Log("run");
         if (slotList == null || slotList.Length == 0)
         {
             slotList = GetComponentsInChildren<_ActionSlotSetup<T, T1>>();
         }
-        Debug.Log("run");
+      //  Debug.Log("run");
         if (dataBase != null) SetupSlotList(dataBase);
     }
     void SetupSlotList(T1[] dataBase)
     {
-        Debug.Log("run");
+      //  Debug.Log("run");
         if (dataBase == null) return;
         int i = 0;
         for (; i < dataBase.Length && i < slotList.Length; i++)

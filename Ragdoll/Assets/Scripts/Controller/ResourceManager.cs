@@ -34,6 +34,5 @@ public class ResourceManager : IResourceManager
     public void SaveResources()
     {
         dataService.Save<ResourceStat>();
-        if (ResourceTextManager.instance != null) ResourceTextManager.instance.UpdateAllText();
     }
 }

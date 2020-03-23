@@ -7,11 +7,11 @@ public class BoosterSlotList : _SlotListSetup<BoosterSlot, BoosterStat>
     {
         base.Start();
     }
-    public void SetupBoosterManager(IBoosterManager boosterManager)
+    public void SetupBoosterManager(IBoosterManager boosterManager, IResourceManager resourceManager = null)
     {
         foreach(BoosterSlot slot in slotList)
         {
-            slot.SetupBoosterManager(boosterManager);
+            slot.SetupBoosterManager(boosterManager, resourceManager);
         }
     }
     public override void Setup(BoosterStat[] dataBase = null)

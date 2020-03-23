@@ -1,0 +1,97 @@
+
+newMainMenu1080.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+can
+  rotate: false
+  xy: 584, 806
+  size: 222, 89
+  orig: 222, 89
+  offset: 0, 0
+  index: -1
+chuoi
+  rotate: false
+  xy: 808, 798
+  size: 181, 97
+  orig: 181, 97
+  offset: 0, 0
+  index: -1
+dau1
+  rotate: true
+  xy: 343, 417
+  size: 194, 195
+  orig: 194, 195
+  offset: 0, 0
+  index: -1
+dau2
+  rotate: false
+  xy: 416, 613
+  size: 195, 191
+  orig: 195, 191
+  offset: 0, 0
+  index: -1
+k1
+  rotate: false
+  xy: 2, 671
+  size: 412, 134
+  orig: 412, 134
+  offset: 0, 0
+  index: -1
+k2
+  rotate: false
+  xy: 305, 807
+  size: 277, 88
+  orig: 277, 88
+  offset: 0, 0
+  index: -1
+k3
+  rotate: false
+  xy: 59, 810
+  size: 244, 85
+  orig: 244, 85
+  offset: 0, 0
+  index: -1
+luoi1
+  rotate: false
+  xy: 613, 605
+  size: 371, 191
+  orig: 371, 191
+  offset: 0, 0
+  index: -1
+luoi2
+  rotate: false
+  xy: 2, 478
+  size: 339, 191
+  orig: 339, 191
+  offset: 0, 0
+  index: -1
+luoi3
+  rotate: false
+  xy: 2, 170
+  size: 511, 245
+  orig: 511, 245
+  offset: 0, 0
+  index: -1
+than
+  rotate: true
+  xy: 540, 307
+  size: 296, 340
+  orig: 296, 340
+  offset: 0, 0
+  index: -1
+than2
+  rotate: false
+  xy: 515, 2
+  size: 442, 303
+  orig: 442, 303
+  offset: 0, 0
+  index: -1
+v1
+  rotate: true
+  xy: 2, 847
+  size: 48, 55
+  orig: 48, 55
+  offset: 0, 0
+  index: -1

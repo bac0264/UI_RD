@@ -1,0 +1,131 @@
+{
+"skeleton": { "hash": "khDxEhzG9ziFNvrPE5VFbo3pK0g=", "spine": "3.8.75" },
+"bones": [
+	{ "name": "root", "x": -1.05, "y": -1.05 },
+	{ "name": "FX1/x1", "parent": "root", "x": -2.77, "y": 5.95 },
+	{ "name": "FX1/v1", "parent": "root", "x": 9.56, "y": 11.21 }
+],
+"slots": [
+	{ "name": "FX1/x1", "bone": "FX1/x1", "blend": "additive" },
+	{ "name": "FX1/v1", "bone": "FX1/v1" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"FX1/x1": {
+				"FX1/x1": { "x": 2.17, "y": 1.87, "width": 125, "height": 131 },
+				"FX1/x2": { "x": 2.17, "y": 1.87, "width": 125, "height": 131 },
+				"FX1/x3": { "x": 2.17, "y": 1.87, "width": 125, "height": 131 },
+				"FX1/x4": { "x": 2.17, "y": 1.87, "width": 125, "height": 131 },
+				"FX1/x5": { "x": 2.17, "y": 1.87, "width": 125, "height": 131 },
+				"FX1/x6": { "x": 2.17, "y": 1.87, "width": 125, "height": 131 },
+				"FX1/x7": { "x": 2.17, "y": 1.87, "width": 125, "height": 131 },
+				"FX1/x8": { "x": 2.17, "y": 1.87, "width": 125, "height": 131 }
+			},
+			"FX1/v1": {
+				"FX1/v1": { "x": 2.82, "y": 2.59, "width": 143, "height": 141 },
+				"FX1/v2": { "x": -8.77, "y": -4.17, "width": 143, "height": 141 },
+				"FX1/v3": { "x": -8.81, "y": -4.19, "width": 143, "height": 141 },
+				"FX1/v4": { "x": -8.74, "y": -4.22, "width": 143, "height": 141 },
+				"FX1/v5": { "x": -8.76, "y": -4.21, "width": 143, "height": 141 },
+				"FX1/v6": { "x": -8.78, "y": -4.18, "width": 143, "height": 141 },
+				"FX1/v7": { "x": -8.77, "y": -4.16, "width": 143, "height": 141 },
+				"FX1/v8": { "x": -8.77, "y": -4.17, "width": 143, "height": 141 },
+				"FX1/v9": { "x": -8.76, "y": -4.21, "width": 143, "height": 141 },
+				"FX1/v10": { "x": -8.79, "y": -4.18, "width": 143, "height": 141 },
+				"FX1/v11": { "x": -8.77, "y": -4.19, "width": 143, "height": 141 },
+				"FX1/v12": { "x": -8.8, "y": -4.18, "width": 143, "height": 141 },
+				"FX1/v13": { "x": -8.76, "y": -4.22, "width": 143, "height": 141 },
+				"FX1/v14": { "x": -8.79, "y": -4.18, "width": 143, "height": 141 },
+				"FX1/v15": { "x": -8.77, "y": -4.21, "width": 143, "height": 141 },
+				"FX1/v16": { "x": -8.77, "y": -4.22, "width": 143, "height": 141 },
+				"FX1/v17": { "x": -8.79, "y": -4.21, "width": 143, "height": 141 },
+				"FX1/v18": { "x": -8.77, "y": -4.2, "width": 143, "height": 141 },
+				"FX1/v19": { "x": -8.77, "y": -4.18, "width": 143, "height": 141 },
+				"FX1/v20": { "x": -8.78, "y": -4.16, "width": 143, "height": 141 },
+				"FX1/v21": { "x": -8.77, "y": -4.16, "width": 143, "height": 141 },
+				"FX1/v22": { "x": -8.75, "y": -4.2, "width": 143, "height": 141 },
+				"FX1/v23": { "x": -8.79, "y": -4.16, "width": 143, "height": 141 },
+				"FX1/v24": { "x": -8.77, "y": -4.16, "width": 143, "height": 141 }
+			}
+		}
+	}
+],
+"animations": {
+	"tang_dam": {
+		"slots": {
+			"FX1/x1": {
+				"attachment": [
+					{ "name": "FX1/x1" },
+					{ "time": 0.0333, "name": "FX1/x2" },
+					{ "time": 0.0667, "name": "FX1/x3" },
+					{ "time": 0.1, "name": "FX1/x4" },
+					{ "time": 0.1333, "name": "FX1/x5" },
+					{ "time": 0.1667, "name": "FX1/x6" },
+					{ "time": 0.2, "name": "FX1/x7" },
+					{ "time": 0.2333, "name": "FX1/x8" },
+					{ "time": 0.2667, "name": "FX1/x1" },
+					{ "time": 0.3, "name": "FX1/x2" },
+					{ "time": 0.3333, "name": "FX1/x3" },
+					{ "time": 0.3667, "name": "FX1/x4" },
+					{ "time": 0.4, "name": "FX1/x5" },
+					{ "time": 0.4333, "name": "FX1/x6" },
+					{ "time": 0.4667, "name": "FX1/x7" },
+					{ "time": 0.5, "name": "FX1/x8" },
+					{ "time": 0.5333, "name": "FX1/x1" },
+					{ "time": 0.5667, "name": "FX1/x2" },
+					{ "time": 0.6, "name": "FX1/x3" },
+					{ "time": 0.6333, "name": "FX1/x4" },
+					{ "time": 0.6667, "name": "FX1/x5" },
+					{ "time": 0.7, "name": "FX1/x6" },
+					{ "time": 0.7333, "name": "FX1/x7" },
+					{ "time": 0.7667, "name": "FX1/x8" },
+					{ "time": 0.8, "name": "FX1/x1" }
+				]
+			},
+			"FX1/v1": {
+				"attachment": [
+					{ "name": "FX1/v2" },
+					{ "time": 0.0333, "name": "FX1/v3" },
+					{ "time": 0.0667, "name": "FX1/v4" },
+					{ "time": 0.1, "name": "FX1/v5" },
+					{ "time": 0.1333, "name": "FX1/v6" },
+					{ "time": 0.1667, "name": "FX1/v7" },
+					{ "time": 0.2, "name": "FX1/v8" },
+					{ "time": 0.2333, "name": "FX1/v9" },
+					{ "time": 0.2667, "name": "FX1/v10" },
+					{ "time": 0.3, "name": "FX1/v11" },
+					{ "time": 0.3333, "name": "FX1/v12" },
+					{ "time": 0.3667, "name": "FX1/v13" },
+					{ "time": 0.4, "name": "FX1/v14" },
+					{ "time": 0.4333, "name": "FX1/v15" },
+					{ "time": 0.4667, "name": "FX1/v16" },
+					{ "time": 0.5, "name": "FX1/v17" },
+					{ "time": 0.5333, "name": "FX1/v18" },
+					{ "time": 0.5667, "name": "FX1/v19" },
+					{ "time": 0.6, "name": "FX1/v20" },
+					{ "time": 0.6333, "name": "FX1/v21" },
+					{ "time": 0.6667, "name": "FX1/v22" },
+					{ "time": 0.7, "name": "FX1/v23" },
+					{ "time": 0.7333, "name": "FX1/v24" },
+					{ "time": 0.7667, "name": "FX1/v2" },
+					{ "time": 0.8, "name": "FX1/v3" }
+				]
+			}
+		},
+		"bones": {
+			"FX1/x1": {
+				"scale": [
+					{ "x": 0.959, "y": 0.959 }
+				]
+			},
+			"FX1/v1": {
+				"scale": [
+					{ "x": 0.959, "y": 0.959 }
+				]
+			}
+		}
+	}
+}
+}

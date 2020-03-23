@@ -23,9 +23,9 @@ public class BoosterShopSlot : BoosterSlot
             }
         }
     }
-    public override void SetupBoosterManager(IBoosterManager boosterManager)
+    public override void SetupBoosterManager(IBoosterManager boosterManager, IResourceManager resourceManager)
     {
-        base.SetupBoosterManager(boosterManager);
+        base.SetupBoosterManager(boosterManager, resourceManager);
     }
     void SetupBtnIAP()
     {

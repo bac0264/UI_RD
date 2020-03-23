@@ -41,17 +41,19 @@ public class BaseStat
         if (value > 0)
         {
             VALUE += value;
+            if (ResourceTextManager.instance != null) ResourceTextManager.instance.UpdateAllText();
             return true;
         }
-        else return false;
+        return false;
     }
     public virtual bool ReduceValue(long value)
     {
         if (value > 0 && VALUE - value >= 0)
         {
             VALUE -= value;
+            if (ResourceTextManager.instance != null) ResourceTextManager.instance.UpdateAllText();
             return true;
         }
-        else return false;
+        return false;
     }
 }

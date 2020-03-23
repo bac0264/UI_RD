@@ -1,0 +1,48 @@
+
+newMainMenu1080.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 216 copy
+  rotate: true
+  xy: 554, 206
+  size: 794, 202
+  orig: 794, 202
+  offset: 0, 0
+  index: -1
+Layer 260
+  rotate: true
+  xy: 2, 55
+  size: 945, 333
+  orig: 945, 333
+  offset: 0, 0
+  index: -1
+legends
+  rotate: false
+  xy: 337, 85
+  size: 752, 87
+  orig: 752, 87
+  offset: 0, 0
+  index: -1
+light_text
+  rotate: false
+  xy: 337, 2
+  size: 251, 81
+  orig: 251, 81
+  offset: 0, 0
+  index: -1
+nen_text
+  rotate: true
+  xy: 758, 209
+  size: 791, 201
+  orig: 791, 201
+  offset: 0, 0
+  index: -1
+stick_light
+  rotate: true
+  xy: 337, 174
+  size: 826, 215
+  orig: 826, 215
+  offset: 0, 0
+  index: -1

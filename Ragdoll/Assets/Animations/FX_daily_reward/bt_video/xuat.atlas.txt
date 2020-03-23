@@ -1,0 +1,20 @@
+
+xuat.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bt3
+  rotate: false
+  xy: 2, 2
+  size: 414, 173
+  orig: 414, 173
+  offset: 0, 0
+  index: -1
+light6
+  rotate: false
+  xy: 418, 41
+  size: 97, 134
+  orig: 97, 134
+  offset: 0, 0
+  index: -1

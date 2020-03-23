@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
 {
     public IBoosterManager boosterManager;
+    public IResourceManager resourceManager;
     public Button Buy;
     public Button Free;
     public GameObject IsPick;
@@ -26,9 +27,10 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
             }
         }
     }
-    public virtual void SetupBoosterManager(IBoosterManager boosterManager)
+    public virtual void SetupBoosterManager(IBoosterManager boosterManager, IResourceManager resourceManager = null)
     {
         this.boosterManager = boosterManager;
+        this.resourceManager = resourceManager;
     }
     private void Start()
     {
@@ -63,12 +65,25 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
     }
     void BuyBtn()
     {
-        if (DATA.AddValue(1))
+        if (resourceManager.GetResourceWithID((int)ResourceStat.TypeOfResource.GOLD).ReduceValue(500))
         {
-            DATA = DATA;
-            if (boosterManager != null)
-                boosterManager.SaveBoosters();
-            else DIContainer.GetModule<IBoosterManager>().SaveBoosters();
+            if (DATA.AddValue(1))
+            {
+                DATA = DATA;
+                if (boosterManager != null)
+                    boosterManager.SaveBoosters();
+                else DIContainer.GetModule<IBoosterManager>().SaveBoosters();
+                if (resourceManager != null) resourceManager.SaveResources();
+                else DIContainer.GetModule<IResourceManager>().SaveResources();
+            }
+            else
+            {
+                if (NotEnoughGoldPooling.instance != null) NotEnoughGoldPooling.instance.getObjectPooling(Buy.transform);
+            }
+        }
+        else
+        {
+            if (NotEnoughGoldPooling.instance != null) NotEnoughGoldPooling.instance.getObjectPooling(Buy.transform);
         }
     }
     #endregion
@@ -94,3 +109,4 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
     }
     #endregion
 }
+

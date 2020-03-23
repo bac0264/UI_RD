@@ -1,0 +1,66 @@
+{
+"skeleton": { "hash": "u0ri4B2ovnb6XnCh5t+V9SM/JJA=", "spine": "3.8.75" },
+"bones": [
+	{ "name": "root", "x": -1.05, "y": -1.05 },
+	{ "name": "no_set/no1", "parent": "root", "x": 4.02, "y": 0.65 }
+],
+"slots": [
+	{ "name": "no_set/no1", "bone": "no_set/no1", "blend": "additive" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"no_set/no1": {
+				"no_set/no1": { "x": 1.59, "y": -10.47, "width": 259, "height": 233 },
+				"no_set/no2": { "x": 1.55, "y": -10.46, "width": 259, "height": 233 },
+				"no_set/no3": { "x": 1.56, "y": -10.44, "width": 259, "height": 233 },
+				"no_set/no4": { "x": 1.54, "y": -10.43, "width": 259, "height": 233 },
+				"no_set/no5": { "x": 1.54, "y": -10.43, "width": 259, "height": 233 },
+				"no_set/no6": { "x": 1.56, "y": -10.47, "width": 259, "height": 233 },
+				"no_set/no7": { "x": 1.55, "y": -10.44, "width": 259, "height": 233 },
+				"no_set/no8": { "x": 1.55, "y": -10.44, "width": 259, "height": 233 },
+				"no_set/no9": { "x": 1.55, "y": -10.47, "width": 259, "height": 233 },
+				"no_set/no10": { "x": 1.55, "y": -10.47, "width": 259, "height": 233 },
+				"no_set/no11": { "x": 1.58, "y": -10.46, "width": 259, "height": 233 }
+			}
+		}
+	}
+],
+"animations": {
+	"no": {
+		"slots": {
+			"no_set/no1": {
+				"color": [
+					{ "time": 0.6667, "color": "ffffffff" },
+					{ "time": 0.7333, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "name": "no_set/no1" },
+					{ "time": 0.0667, "name": "no_set/no2" },
+					{ "time": 0.1333, "name": "no_set/no3" },
+					{ "time": 0.2, "name": "no_set/no4" },
+					{ "time": 0.2667, "name": "no_set/no5" },
+					{ "time": 0.3333, "name": "no_set/no6" },
+					{ "time": 0.4, "name": "no_set/no7" },
+					{ "time": 0.4667, "name": "no_set/no8" },
+					{ "time": 0.5333, "name": "no_set/no9" },
+					{ "time": 0.6, "name": "no_set/no10" },
+					{ "time": 0.6667, "name": "no_set/no11" },
+					{ "time": 0.7333, "name": null }
+				]
+			}
+		},
+		"bones": {
+			"no_set/no1": {
+				"scale": [
+					{ "x": 1.259, "y": 1.259 }
+				]
+			}
+		},
+		"drawOrder": [
+			{}
+		]
+	}
+}
+}
