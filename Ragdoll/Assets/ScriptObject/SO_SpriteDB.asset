@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iconList:
   - sprites:
-    - {fileID: 888960729509864923, guid: c30c3ca88e74f0945b58d18193d8b0ff, type: 3}
-  - sprites:
-    - {fileID: -9049981699629457074, guid: 7eb8d770a297aab4cbb658b541cccc02, type: 3}
-    - {fileID: 8059818726617933740, guid: 7eb8d770a297aab4cbb658b541cccc02, type: 3}
-    - {fileID: 5618691726887250117, guid: 7eb8d770a297aab4cbb658b541cccc02, type: 3}
-    - {fileID: -8634567158034355947, guid: 7eb8d770a297aab4cbb658b541cccc02, type: 3}
-    - {fileID: 8994063777638452009, guid: 7eb8d770a297aab4cbb658b541cccc02, type: 3}
-    - {fileID: -1767866174399459823, guid: 7eb8d770a297aab4cbb658b541cccc02, type: 3}
     - {fileID: -1581765761073892560, guid: 7eb8d770a297aab4cbb658b541cccc02, type: 3}
+  - sprites:
+    - {fileID: -7005777226995630863, guid: c6ead2504938b624ca775b620f6b8bd0, type: 3}
+    - {fileID: -3302629309037430929, guid: c6ead2504938b624ca775b620f6b8bd0, type: 3}
+    - {fileID: -8976603494514670715, guid: c6ead2504938b624ca775b620f6b8bd0, type: 3}
+    - {fileID: 5064709238083641567, guid: c6ead2504938b624ca775b620f6b8bd0, type: 3}
+    - {fileID: 4939772988657411462, guid: c6ead2504938b624ca775b620f6b8bd0, type: 3}
+    - {fileID: -908765771136838596, guid: c6ead2504938b624ca775b620f6b8bd0, type: 3}
+    - {fileID: 5709506201084411174, guid: c6ead2504938b624ca775b620f6b8bd0, type: 3}
   - sprites:
     - {fileID: 3751482360151385957, guid: 119d1ce11211a08449e829fd7a9fa869, type: 3}
     - {fileID: -3143747720611569955, guid: 119d1ce11211a08449e829fd7a9fa869, type: 3}
@@ -96,6 +96,14 @@ MonoBehaviour:
   iconPacks:
   - {fileID: -3532672564889767178, guid: db4da1bd51a7ba147b87b15767b7f3b6, type: 3}
   - {fileID: 5746155902544276574, guid: db4da1bd51a7ba147b87b15767b7f3b6, type: 3}
+  iconImageValueInBoosters:
+  - {fileID: -1257588174629466176, guid: a2ee4a4da8a754544aa60104ad51b323, type: 3}
+  - {fileID: -2783511305287747131, guid: c6ead2504938b624ca775b620f6b8bd0, type: 3}
+  - {fileID: 2683638657574503111, guid: c6ead2504938b624ca775b620f6b8bd0, type: 3}
+  - {fileID: 660295384573789019, guid: c6ead2504938b624ca775b620f6b8bd0, type: 3}
+  - {fileID: 826715873088752370, guid: c6ead2504938b624ca775b620f6b8bd0, type: 3}
+  - {fileID: 2683638657574503111, guid: c6ead2504938b624ca775b620f6b8bd0, type: 3}
+  - {fileID: -9132056886635273945, guid: c6ead2504938b624ca775b620f6b8bd0, type: 3}
   mapData:
     Open: {fileID: 2376232022617226042, guid: 2371e9e32281d8345a6ccad9ac596846, type: 3}
     Hide: {fileID: 2349048481594507135, guid: 2371e9e32281d8345a6ccad9ac596846, type: 3}

@@ -10,6 +10,7 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
     public Button Buy;
     public Button Free;
     public GameObject IsPick;
+    public Image ValueImage;
     public override BoosterStat DATA
     {
         get => base.DATA; set
@@ -25,6 +26,7 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
                 if (DATA.IsPick) IsPick.SetActive(true);
                 else IsPick.SetActive(false);
             }
+            if(ValueImage != null) ValueImage.sprite = SpriteDB.Instance.GetValueImageInBooster(DATA.ID);
         }
     }
     public virtual void SetupBoosterManager(IBoosterManager boosterManager, IResourceManager resourceManager = null)
@@ -70,11 +72,13 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
             if (DATA.AddValue(1))
             {
                 DATA = DATA;
+                BoosterStat data = new BoosterStat(1, (BoosterStat.TypeOfBooster)DATA.ID);
                 if (boosterManager != null)
                     boosterManager.SaveBoosters();
                 else DIContainer.GetModule<IBoosterManager>().SaveBoosters();
                 if (resourceManager != null) resourceManager.SaveResources();
                 else DIContainer.GetModule<IResourceManager>().SaveResources();
+                if (PopupFactory.instance != null) PopupFactory.instance.ShowPopup<BaseStat>(TypeOfPopup.ShopPopup, data);
             }
             else
             {

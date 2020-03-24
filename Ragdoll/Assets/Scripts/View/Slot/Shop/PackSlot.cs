@@ -6,8 +6,7 @@ using System.Collections.Generic;
 public class PackSlot : MonoBehaviour
 {
     DataSave<BaseStat> data;
-
-
+    IShopManager shopManager;
 
     public Button buy;
     public Text IAP;
@@ -24,12 +23,18 @@ public class PackSlot : MonoBehaviour
             if (IAP != null)
                 IAP.text = dataPack.IAP.ToString();
             if (icon != null)
+            {
                 icon.sprite = SpriteDB.Instance.GetPackIconInShop(dataPack.ID);
+            }
         }
         get
         {
             return dataPack;
         }
+    }
+    public void SetupShopManager(IShopManager shopManager)
+    {
+        this.shopManager = shopManager;
     }
     private void Start()
     {
@@ -55,7 +60,11 @@ public class PackSlot : MonoBehaviour
         {
             data.results[i].AddPrice();
         }
+        DataShop dataShop = new DataShop(DATA_PACK.ID);
+        shopManager.AddPackRecieving(dataShop);
+        shopManager.SaveShops();
         if (PopupFactory.instance != null)
             PopupFactory.instance.ShowPopup<BaseStat>(TypeOfPopup.ShopPopup, null, data.results);
+        gameObject.SetActive(false);
     }
 }

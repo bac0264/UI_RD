@@ -20,6 +20,7 @@ public class ResourceShopSlot : ResourceSlot
             {
                 ResourceShopStat data = DATA as ResourceShopStat;
                 if (IAP != null) IAP.text = data.IAP;
+                if (TXT_VALUE != null) TXT_VALUE.text = "+ " + TXT_VALUE.text;
             }
         }
     }

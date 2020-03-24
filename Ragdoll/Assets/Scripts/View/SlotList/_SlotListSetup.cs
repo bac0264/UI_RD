@@ -40,7 +40,7 @@ public class _SlotListSetup<T, T1> : MonoBehaviour
         for (; i < dataBase.Length && i < slotList.Length; i++)
         {
             slotList[i].DATA = dataBase[i];
-            Debug.Log(JsonUtility.ToJson(slotList[i].DATA));
+            //Debug.Log(JsonUtility.ToJson(slotList[i].DATA));
             slotList[i].gameObject.SetActive(true);
         }
         for (; i < slotList.Length; i++)

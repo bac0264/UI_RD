@@ -8,6 +8,8 @@ public enum PanelType
     BoosterPanel = 3,
     ShopPanel = 4,
     ShopResourcePanel = 5,
+    EndlessModePanel = 6,
+    OnlineModePanel = 7,
 }
 public class BasePanel : MonoBehaviour
 {

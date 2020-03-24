@@ -54,6 +54,7 @@ public class CharacterSlotPanel : _PanelSetup<CharacterSlot, CharacterStat>
     {
         int levelMap = 50;
         currrentCharacter = characterManager.GetCharacterWithID(_cur);
+        characterManager.CurrentCharacter = currrentCharacter;
         dataCharacterUnlock = characterData.characterDatas[currrentCharacter.ID];
         dataUpgradeCharacter = upgradeCharacterData.upgradeCharacterDatas[currrentCharacter.LEVEL];
         //  ResourceStat lv = resourceManager.GetResourceWithID((int)ResourceStat.TypeOfResource.EXP);
@@ -128,7 +129,7 @@ public class CharacterSlotPanel : _PanelSetup<CharacterSlot, CharacterStat>
     public void Upgrade()
     {
         if (currrentCharacter.LEVEL >= (MAX + currrentCharacter.ID)) return;
-      //  resourceManager.GetResourceWithID((int)ResourceStat.TypeOfResource.GOLD).AddValue(dataUpgradeCharacter.GOLD);
+        //  resourceManager.GetResourceWithID((int)ResourceStat.TypeOfResource.GOLD).AddValue(dataUpgradeCharacter.GOLD);
         if (resourceManager.GetResourceWithID((int)ResourceStat.TypeOfResource.GOLD).ReduceValue(dataUpgradeCharacter.GOLD))
         {
             currrentCharacter.LEVEL++;
@@ -143,7 +144,7 @@ public class CharacterSlotPanel : _PanelSetup<CharacterSlot, CharacterStat>
     }
     public void Unlock()
     {
-      //  resourceManager.GetResourceWithID((int)ResourceStat.TypeOfResource.GOLD).AddValue(dataCharacterUnlock.GOLD_UNLOCK);
+        //  resourceManager.GetResourceWithID((int)ResourceStat.TypeOfResource.GOLD).AddValue(dataCharacterUnlock.GOLD_UNLOCK);
         if (resourceManager.GetResourceWithID((int)ResourceStat.TypeOfResource.GOLD).ReduceValue(dataCharacterUnlock.GOLD_UNLOCK))
         {
             currrentCharacter.IsBought = true;

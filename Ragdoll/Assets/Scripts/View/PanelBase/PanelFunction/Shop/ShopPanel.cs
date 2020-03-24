@@ -12,7 +12,7 @@ public class ShopPanel : BasePanel
     public GameObject PackPick_3;
     IBoosterManager boosterManager;
     IResourceManager resourceManager;
-
+    IShopManager IShopManager;
     public override void OnValidate()
     {
         base.OnValidate();
@@ -35,9 +35,10 @@ public class ShopPanel : BasePanel
     {
         resourceManager = DIContainer.GetModule<IResourceManager>();
         boosterManager = DIContainer.GetModule<IBoosterManager>();
+        IShopManager = DIContainer.GetModule<IShopManager>();
         shopResourcePanel.SetupAll(resourceManager);
         shopBoosterPanel.SetupAll(boosterManager);
-        shopPackPanel.SetupAll();
+        shopPackPanel.SetupAll(IShopManager);
     }
 
     public void ResourceTag()

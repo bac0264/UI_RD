@@ -8,12 +8,21 @@ public class SO_SpriteDB : ScriptableObject
     public List<BackgroundList> backgroundList;
     public List<Sprite> iconBoosterInStoryMode;
     public List<Sprite> iconPacks;
+    public List<Sprite> iconImageValueInBoosters;
     public MapSpriteList mapData;
     public Sprite GetIconPack(int id)
     {
         if(id < iconPacks.Count)
         {
             return iconPacks[id];
+        }
+        return null;
+    }
+    public Sprite GetValueImageInBooster(int ID)
+    {
+        if (ID < iconImageValueInBoosters.Count)
+        {
+            return iconImageValueInBoosters[ID];
         }
         return null;
     }

@@ -10,6 +10,10 @@ public class SpriteDB : MonoBehaviour
     {
         if (Instance == null) Instance = this;
     }
+    public Sprite GetValueImageInBooster(int ID)
+    {
+        return spriteDB.GetValueImageInBooster(ID);
+    }
     public Sprite GetPackIconInShop(int ID)
     {
         return spriteDB.GetIconPack(ID);

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class BoosterShopSlot : BoosterSlot
 {
+    public Text AvailableValue;
     public Text IAP;
     public Button BuyIAP;
     private void Start()
@@ -20,6 +21,12 @@ public class BoosterShopSlot : BoosterSlot
             {
                 BoosterShopStat data = DATA as BoosterShopStat;
                 if (IAP != null) IAP.text = data.IAP;
+            }
+            if (TXT_VALUE != null) TXT_VALUE.text = "+ " + TXT_VALUE.text;
+            if (AvailableValue != null)
+            {
+                if (boosterManager == null) boosterManager = DIContainer.GetModule<IBoosterManager>();
+                AvailableValue.text = boosterManager.GetBoosterWithID(DATA.ID).VALUE.ToString();
             }
         }
     }
@@ -41,6 +48,7 @@ public class BoosterShopSlot : BoosterSlot
         {
             boosterManager.GetBoosterWithID(DATA.ID).AddValue(DATA.VALUE);
             boosterManager.SaveBoosters();
+            DATA = DATA;
             if (PopupFactory.instance != null) 
                 PopupFactory.instance.ShowPopup<BaseStat>(TypeOfPopup.ShopPopup, DATA);
         }

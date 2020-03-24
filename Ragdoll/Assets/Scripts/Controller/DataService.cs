@@ -10,6 +10,8 @@ public class DataService : IDataService
     DataSave<MapDataStat> MapDataStat_DataSave;
     DataSave<ResourceStat> ResourceStat_DataSave;
     DataSave<CharacterStat> CharacterStat_DataSave;
+    DataSave<DataShop> DataShop_DataSave;
+
     public DataService()
     {
         if (PlayerPrefs.GetInt("First", 0) == 0)
@@ -18,6 +20,7 @@ public class DataService : IDataService
             AddBoosters();
             AddCharacters();
             AddMaps();
+            AddShops();
             Save();
             PlayerPrefs.SetInt("First", 1);
         }
@@ -70,7 +73,10 @@ public class DataService : IDataService
                 map.IS_OPEN = true;
             MapDataStat_DataSave.Add(map);
         }
-        Debug.Log(JsonUtility.ToJson(MapDataStat_DataSave));
+    }
+    void AddShops()
+    {
+        DataShop_DataSave = new DataSave<DataShop>();
     }
     void CheckMapInPref()
     {
@@ -98,6 +104,7 @@ public class DataService : IDataService
         else if (typeof(T).ToString().Equals(BaseStat.Type.ResourceStat.ToString())) return (DataSave<T>)(object)ResourceStat_DataSave;
         else if (typeof(T).ToString().Equals(BaseStat.Type.CharacterStat.ToString())) return (DataSave<T>)(object)CharacterStat_DataSave;
         else if (typeof(T).ToString().Equals(typeof(MapDataStat).ToString())) return (DataSave<T>)(object)MapDataStat_DataSave;
+        else if (typeof(T).ToString().Equals(typeof(DataShop).ToString())) return (DataSave<T>)(object)DataShop_DataSave;
         return null;
     }
     void Save()
@@ -105,11 +112,13 @@ public class DataService : IDataService
         string dataMap = JsonUtility.ToJson(MapDataStat_DataSave);
         string dataBooster = JsonUtility.ToJson(BoosterStat_DataSave);
         string dataResource = JsonUtility.ToJson(ResourceStat_DataSave);
-        string DataCharacterUnlock = JsonUtility.ToJson(CharacterStat_DataSave);
+        string dataShop = JsonUtility.ToJson(DataShop_DataSave);
+        string dataCharacterUnlock = JsonUtility.ToJson(CharacterStat_DataSave);
         PlayerPrefs.SetString(KeySave.DATA_MAP, dataMap);
+        PlayerPrefs.SetString(KeySave.DATA_SHOPS, dataShop);
         PlayerPrefs.SetString(KeySave.DATA_BOOSTERS, dataBooster);
         PlayerPrefs.SetString(KeySave.DATA_RESOURCES, dataResource);
-        PlayerPrefs.SetString(KeySave.DATA_CHARACTERS, DataCharacterUnlock);
+        PlayerPrefs.SetString(KeySave.DATA_CHARACTERS, dataCharacterUnlock);
     }
     public void Save<T>()
     {
@@ -117,9 +126,11 @@ public class DataService : IDataService
         else if (typeof(T).ToString().Equals(BaseStat.Type.ResourceStat.ToString())) PlayerPrefs.SetString(KeySave.DATA_RESOURCES, JsonUtility.ToJson(ResourceStat_DataSave));
         else if (typeof(T).ToString().Equals(BaseStat.Type.CharacterStat.ToString())) PlayerPrefs.SetString(KeySave.DATA_CHARACTERS, JsonUtility.ToJson(CharacterStat_DataSave));
         else if (typeof(T).ToString().Equals(typeof(MapDataStat).ToString())) PlayerPrefs.SetString(KeySave.DATA_MAP, JsonUtility.ToJson(MapDataStat_DataSave));
+        else if (typeof(T).ToString().Equals(typeof(DataShop).ToString())) PlayerPrefs.SetString(KeySave.DATA_SHOPS, JsonUtility.ToJson(DataShop_DataSave));
     }
     public void Load()
     {
+        DataShop_DataSave = JsonUtility.FromJson<DataSave<DataShop>>(PlayerPrefs.GetString(KeySave.DATA_SHOPS));
         MapDataStat_DataSave = JsonUtility.FromJson<DataSave<MapDataStat>>(PlayerPrefs.GetString(KeySave.DATA_MAP));
         BoosterStat_DataSave = JsonUtility.FromJson<DataSave<BoosterStat>>(PlayerPrefs.GetString(KeySave.DATA_BOOSTERS));
         ResourceStat_DataSave = JsonUtility.FromJson<DataSave<ResourceStat>>(PlayerPrefs.GetString(KeySave.DATA_RESOURCES));

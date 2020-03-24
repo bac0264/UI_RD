@@ -24,11 +24,20 @@ public class BasePopup<T> : BasePopupSimple
 }
 public class BasePopupSimple : MonoBehaviour
 {
+    public Animator animator;
+    private void OnValidate()
+    {
+        if (animator == null) animator = GetComponent<Animator>();
+    }
     public virtual void ShowPopup()
     {
         gameObject.SetActive(true);
     }
     public virtual void HidePopup()
+    {
+        animator.Play("HidePopup");
+    }
+    public void Hide()
     {
         gameObject.SetActive(false);
     }

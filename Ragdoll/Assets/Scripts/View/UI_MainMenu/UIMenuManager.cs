@@ -33,6 +33,32 @@ public class UIMenuManager : MonoBehaviour
         IsHide = false;
         Prevent.SetActive(false);
     }
+    // Online Mode
+    #region
+    public void _OnlineMode()
+    {
+        StartCoroutine(OnlineMode());
+    }
+    IEnumerator OnlineMode()
+    {
+        HideMenu();
+        yield return new WaitUntil(() => IsHide);
+        if (PanelFactory.instance != null) PanelFactory.instance.ShowPanel(PanelType.OnlineModePanel);
+    }
+    #endregion
+    // Endless Mode
+    #region
+    public void _EndlessMode()
+    {
+        StartCoroutine(EndlessMode());
+    }
+    IEnumerator EndlessMode()
+    {
+        HideMenu();
+        yield return new WaitUntil(() => IsHide);
+        if (PanelFactory.instance != null) PanelFactory.instance.ShowPanel(PanelType.EndlessModePanel);
+    }
+    #endregion
     // Story Mode
     #region
     public void _StoryMode()

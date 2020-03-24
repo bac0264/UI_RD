@@ -11,7 +11,7 @@ public class BoosterSlotPanel : _PanelSetup<BoosterSlot, BoosterStat>
         this.BoosterManager = BoosterManager;
         this.resourceManager = resourceManager;
         List<BoosterStat> BoosterNeeds = new List<BoosterStat>();
-        int[] IndexBoosterNeeds = new int[] { 3,1,2 };
+        int[] IndexBoosterNeeds = new int[] { 0,1,2 };
         for (int i = 0; i < IndexBoosterNeeds.Length; i++)
         {
             BoosterNeeds.Add(BoosterManager.GetBoosterWithID(IndexBoosterNeeds[i]));

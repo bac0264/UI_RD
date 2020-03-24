@@ -38,7 +38,7 @@ public class Snap : MonoBehaviour
             {
                 posList.Add(slot.GetComponent<RectTransform>());
             }
-        }    
+        }
     }
     private void Update()
     {
@@ -74,6 +74,12 @@ public class Snap : MonoBehaviour
         Vector2 newPosition = new Vector2(newX, panel.anchoredPosition.y);
         panel.anchoredPosition = newPosition;
     }
+    public void LerpToImage_2(float position)
+    {
+        float newX = Mathf.Lerp(panel.anchoredPosition.x, position, 0.55f);
+        Vector2 newPosition = new Vector2(newX, panel.anchoredPosition.y);
+        panel.anchoredPosition = newPosition;
+    }
     public void _initPos(float position)
     {
         float newX = position;
@@ -96,5 +102,23 @@ public class Snap : MonoBehaviour
     public bool getDrag()
     {
         return dragging;
+    }
+    public void Left()
+    {
+        if (minButtonNum - 1 >= 0) minButtonNum--;
+        if (container != null)
+        {
+            container.RefeshUI(minButtonNum);
+            LerpToImage_2(minButtonNum * (-bttnDistance));
+        }
+    }
+    public void Right()
+    {
+        if (minButtonNum + 1 < posList.Count) minButtonNum++;
+        if (container != null)
+        {
+            container.RefeshUI(minButtonNum);
+            LerpToImage_2(minButtonNum * (-bttnDistance));
+        }
     }
 }

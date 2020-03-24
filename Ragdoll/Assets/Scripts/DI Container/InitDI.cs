@@ -12,5 +12,6 @@ public class InitDI : MonoBehaviour
         DIContainer.SetModule<IBoosterManager, BoosterManager>();
         DIContainer.SetModule<ICharacterManager, CharacterManager>();
         DIContainer.SetModule<IMapManager, MapManager>();
+        DIContainer.SetModule<IShopManager, ShopManager>();
     }
 }
