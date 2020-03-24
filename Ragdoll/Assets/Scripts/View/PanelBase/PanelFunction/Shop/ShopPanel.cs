@@ -36,9 +36,9 @@ public class ShopPanel : BasePanel
         resourceManager = DIContainer.GetModule<IResourceManager>();
         boosterManager = DIContainer.GetModule<IBoosterManager>();
         IShopManager = DIContainer.GetModule<IShopManager>();
-        shopResourcePanel.SetupAll(resourceManager);
-        shopBoosterPanel.SetupAll(boosterManager);
-        shopPackPanel.SetupAll(IShopManager);
+        shopResourcePanel.InjectData(resourceManager);
+        shopBoosterPanel.InjectData(boosterManager);
+        shopPackPanel.InjectData(IShopManager);
     }
 
     public void ResourceTag()

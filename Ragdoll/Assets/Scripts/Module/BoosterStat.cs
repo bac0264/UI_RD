@@ -30,13 +30,15 @@ public class BoosterStat : BaseStat
     }
     public override bool AddPrice()
     {
+        Debug.Log("Character");
         if (VALUE > 0)
         {
+            Debug.Log("Character");
             IBoosterManager booster = DIContainer.GetModule<IBoosterManager>();
             booster.GetBoosterWithID(ID).VALUE += VALUE;
             booster.SaveBoosters();
             return true;
         }
-        return false;
+        return true;
     }
 }

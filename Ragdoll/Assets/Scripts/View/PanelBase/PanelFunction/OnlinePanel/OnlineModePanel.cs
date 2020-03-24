@@ -26,7 +26,7 @@ public class OnlineModePanel : BasePanel
     }
     public void SetupData()
     {
-        characterPanel.SetupAll(characterManager, resourceManager);
+        characterPanel.InjectData(characterManager, resourceManager);
     }
     // Setup Display
     #region

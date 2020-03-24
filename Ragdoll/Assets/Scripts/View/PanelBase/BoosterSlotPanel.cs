@@ -6,7 +6,7 @@ public class BoosterSlotPanel : _PanelSetup<BoosterSlot, BoosterStat>
 {
     public IBoosterManager BoosterManager;
     public IResourceManager resourceManager;
-    public virtual void SetupAll(IBoosterManager BoosterManager, IResourceManager resourceManager)
+    public virtual void InjectData(IBoosterManager BoosterManager, IResourceManager resourceManager)
     {
         this.BoosterManager = BoosterManager;
         this.resourceManager = resourceManager;

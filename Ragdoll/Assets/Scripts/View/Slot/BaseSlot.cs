@@ -19,6 +19,7 @@ public class BaseSlot : _ActionSlotSetup<BaseSlot,BaseStat>
                 IMG_ICON.rectTransform.pivot = new Vector2(0.5f, 0.4f);
             }
             if(IMG_BG != null) IMG_BG.sprite = SpriteDB.Instance.GetBackground(DATA.TYPE, DATA.ID);
+            if (value is CharacterStat) TXT_VALUE.text = "";
         }        
     }
 }

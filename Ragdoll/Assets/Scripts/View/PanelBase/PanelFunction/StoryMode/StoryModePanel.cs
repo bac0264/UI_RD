@@ -41,9 +41,9 @@ public class StoryModePanel : BasePanel
     }
     public void SetupData()
     {
-        mapPanel.SetupAll(mapManager, this);
-        boosterPanel.SetupAll(boosterManager, resourceManager);
-        characterPanel.SetupAll(characterManager, resourceManager);
+        mapPanel.InjectData(mapManager, this);
+        boosterPanel.InjectData(boosterManager, resourceManager);
+        characterPanel.InjectData(characterManager, resourceManager);
     }
     // Setup Display
     #region

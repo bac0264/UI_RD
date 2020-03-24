@@ -40,7 +40,7 @@ public class MapPanel : _PanelSetup<MapSlot, MapDataStat>
             }
         }
     }
-    public void SetupAll(IMapManager mapManager, StoryModePanel storyMode)
+    public void InjectData(IMapManager mapManager, StoryModePanel storyMode)
     {
         this.storyMode = storyMode;
         this.mapManager = mapManager;

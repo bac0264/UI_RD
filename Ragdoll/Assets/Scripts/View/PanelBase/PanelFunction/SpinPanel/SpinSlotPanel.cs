@@ -47,18 +47,29 @@ public class SpinSlotPanel : _PanelSetup<BaseSlot, BaseStat>
     }
     IEnumerator _SpinAnimation()
     {
+        int random = Random.Range(0, SlotListManager.slotList.Length);
         SpinImage.gameObject.SetActive(true);
         for (int i = 0; i < SlotListManager.slotList.Length; i++)
         {
             SpinImage.position = SlotListManager.slotList[i].transform.position;
             yield return new WaitForSeconds(0.1f);
         }
-        for(int i = 0; i < 6; i++)
+        SpinImage.position = SlotListManager.slotList[random].transform.position;
+        for (int i = 0; i < 6; i++)
         {
             Tween flicker = SpinImage.GetComponent<Image>().DOColor(new Color(1, 1, 1, 100f / 255), 0.1f);
             yield return flicker.WaitForCompletion();
-            flicker = SpinImage.GetComponent<Image>().DOColor(new Color(1, 1, 1, 1), 0.1f);
+            flicker = SpinImage.GetComponent<Image>().DOColor(new Color(1, 1, 1, 1), 0.2f);
             yield return flicker.WaitForCompletion();
+        }
+        Debug.Log(SlotListManager.slotList[random].DATA is BoosterStat);
+        Debug.Log(SlotListManager.slotList[random].DATA.ID);
+        Debug.Log(SlotListManager.slotList[random].DATA.VALUE);
+        bool recieve = SlotListManager.slotList[random].DATA.AddPrice();
+        Debug.Log(recieve);
+        if (recieve)
+        {
+            if (PopupFactory.instance != null) PopupFactory.instance.ShowPopup<BaseStat>(TypeOfPopup.SpinPopup, SlotListManager.slotList[random].DATA);
         }
     }
     public void FreeBtn()

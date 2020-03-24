@@ -16,7 +16,7 @@ public class ShopBoosterPanel : BoosterSlotPanel
     {
         base.Setup(dataBase);
     }
-    public override void SetupAll(IBoosterManager BoosterManager, IResourceManager resourceManager = null)
+    public override void InjectData(IBoosterManager BoosterManager, IResourceManager resourceManager = null)
     {
         Setup(soBooster.boosterList.ToArray());
         SlotListManager.GetType<BoosterSlotList>().SetupBoosterManager(BoosterManager);

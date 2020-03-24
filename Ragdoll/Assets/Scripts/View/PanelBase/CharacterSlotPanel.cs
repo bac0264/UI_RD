@@ -42,7 +42,7 @@ public class CharacterSlotPanel : _PanelSetup<CharacterSlot, CharacterStat>
             snap = GetComponentInChildren<Snap>();
     }
 
-    public void SetupAll(ICharacterManager characterManager, IResourceManager resourceManager)
+    public void InjectData(ICharacterManager characterManager, IResourceManager resourceManager)
     {
         this.resourceManager = resourceManager;
         this.characterManager = characterManager;

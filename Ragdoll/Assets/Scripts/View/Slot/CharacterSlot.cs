@@ -13,7 +13,10 @@ public class CharacterSlot : _ActionSlotSetup<CharacterSlot, CharacterStat>
         {
             base.DATA = value;
             if (TXT_VALUE != null)
+            {
                 TXT_VALUE.text = DATA.VALUE.ToString();
+                TXT_VALUE.text = "";
+            }
             if (IMG_ICON != null)
             {
                 IMG_ICON.sprite = SpriteDB.Instance.GetIcon(DATA.TYPE, DATA.ID);

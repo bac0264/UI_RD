@@ -23,9 +23,11 @@ public class ResourceStat : BaseStat
     }
     public override bool AddPrice()
     {
+        Debug.Log("resource" + VALUE);
         if (VALUE > 0)
         {
             IResourceManager resourceManager = DIContainer.GetModule<IResourceManager>();
+            Debug.Log(resourceManager);
             resourceManager.GetResourceWithID(ID).VALUE += VALUE;
             resourceManager.SaveResources();
             return true;

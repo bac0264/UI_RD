@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public enum TypeOfPopup
 {
     ShopPopup,
+    SpinPopup,
 }
 public class BasePopup<T> : BasePopupSimple
 { 
@@ -33,11 +34,15 @@ public class BasePopupSimple : MonoBehaviour
     {
         gameObject.SetActive(true);
     }
+    public virtual void ShowKey()
+    {
+
+    }
     public virtual void HidePopup()
     {
         animator.Play("HidePopup");
     }
-    public void Hide()
+    public virtual void Hide()
     {
         gameObject.SetActive(false);
     }

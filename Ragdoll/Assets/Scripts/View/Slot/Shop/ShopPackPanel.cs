@@ -19,7 +19,7 @@ public class ShopPackPanel : MonoBehaviour
     {
         if (shopSlotList == null) shopSlotList = GetComponentInChildren<ShopSlotList>();
     }
-    public void SetupAll(IShopManager shopManager)
+    public void InjectData(IShopManager shopManager)
     {
         this.shopManager = shopManager;
         shopSlotList.SetupData(soPackShop.PackDatas.ToArray(), shopManager);

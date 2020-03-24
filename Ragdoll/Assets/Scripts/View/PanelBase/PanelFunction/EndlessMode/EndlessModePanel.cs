@@ -30,8 +30,8 @@ public class EndlessModePanel : BasePanel
     }
     public void SetupData()
     {
-        boosterPanel.SetupAll(boosterManager, resourceManager);
-        characterPanel.SetupAll(characterManager, resourceManager);
+        boosterPanel.InjectData(boosterManager, resourceManager);
+        characterPanel.InjectData(characterManager, resourceManager);
     }
     // Setup Display
     #region

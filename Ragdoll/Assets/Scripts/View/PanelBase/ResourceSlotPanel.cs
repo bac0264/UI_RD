@@ -4,7 +4,7 @@ using System.Collections;
 public class ResourceSlotPanel : _PanelSetup<ResourceSlot, ResourceStat>
 {
     IResourceManager resourceManager;
-    SO_GoldShop soGoldShop;
+    //SO_GoldShop soGoldShop;
     private void Start()
     {
         resourceManager = DIContainer.GetModule<IResourceManager>();

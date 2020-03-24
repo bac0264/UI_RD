@@ -49,8 +49,10 @@ public class CharacterStat : BaseStat
 
     public override bool AddPrice()
     {
+        Debug.Log("Character");
         if (!IsBought)
         {
+            Debug.Log("Character");
             ICharacterManager character = DIContainer.GetModule<ICharacterManager>();
             character.GetCharacterWithID(ID).IsBought = true;
             character.SaveCharacters();
