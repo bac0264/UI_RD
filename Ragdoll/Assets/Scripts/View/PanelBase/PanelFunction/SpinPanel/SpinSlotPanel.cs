@@ -6,12 +6,17 @@ using UnityEngine.UI;
 
 public class SpinSlotPanel : _PanelSetup<BaseSlot, BaseStat>
 {
+    public static SpinSlotPanel instance;
     public Transform SpinImage;
 
     public SO_Spin spin;
     public int index;
     List<DataSave<BaseStat>> spinDatas;
     bool _spin = false;
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+    }
     private void Start()
     {
         InjectData();
@@ -48,6 +53,13 @@ public class SpinSlotPanel : _PanelSetup<BaseSlot, BaseStat>
         }
     }
     public void WatchVideoToSpin()
+    {
+        if (!_spin)
+        {
+            if(IronSourceManager.instance != null) IronSourceManager.instance.ShowRewardedVideo(0);
+        }
+    }
+    public void AfterWatchVideo()
     {
         if (!_spin)
         {

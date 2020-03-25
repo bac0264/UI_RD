@@ -98,10 +98,10 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
         Free.onClick.RemoveAllListeners();
         Free.onClick.AddListener(delegate
         {
-            FreeBtn();
+            if (IronSourceManager.instance != null) IronSourceManager.instance.ShowRewardedVideo(1);
         });
     }
-    void FreeBtn()
+    public void FreeBtn()
     {
         if (DATA.AddValue(1))
         {
@@ -109,6 +109,8 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
             if (boosterManager != null)
                 boosterManager.SaveBoosters();
             else DIContainer.GetModule<IBoosterManager>().SaveBoosters();
+            BoosterStat data = new BoosterStat(1, (BoosterStat.TypeOfBooster)DATA.ID);
+            if (PopupFactory.instance != null) PopupFactory.instance.ShowPopup<BaseStat>(TypeOfPopup.StoryPopup, data);
         }
     }
     #endregion

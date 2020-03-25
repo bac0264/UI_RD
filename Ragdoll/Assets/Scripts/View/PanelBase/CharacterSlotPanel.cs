@@ -159,6 +159,10 @@ public class CharacterSlotPanel : _PanelSetup<CharacterSlot, CharacterStat>
 
     public void VideoUnlock()
     {
+        if (IronSourceManager.instance != null) IronSourceManager.instance.ShowRewardedVideo(2, null, this);
+    }
+    public void AfterWatchVideoUnlock()
+    {
         currrentCharacter.VideoUnlock++;
         if (currrentCharacter.VideoUnlock == dataCharacterUnlock.VIDEO_UNLOCK)
             currrentCharacter.IsBought = true;

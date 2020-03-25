@@ -52,19 +52,23 @@ public class SpinPopup : BasePopup<BaseStat>
         x3 = true;
         allowHiding = true;
     }
+    public void AfterX3Price()
+    {
+        int count = 0;
+        int i = 0;
+        while (i <= count)
+        {
+            i++;
+            Debug.Log(i);
+            container.DATA.AddPrice();
+        }
+        StartCoroutine(AfterX3());
+    }
     public void X3Price()
     {
         if (x3)
         {
-            int count = 0;
-            int i = 0;
-            while (i <= count)
-            {
-                i++;
-                Debug.Log(i);
-                container.DATA.AddPrice();
-            }
-            StartCoroutine(AfterX3());
+            if (IronSourceManager.instance != null) IronSourceManager.instance.ShowRewardedVideo(3, null, null, this);
         }
     }
     IEnumerator AfterX3()
