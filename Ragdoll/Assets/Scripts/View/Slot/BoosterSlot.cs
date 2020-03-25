@@ -78,7 +78,7 @@ public class BoosterSlot : _ActionSlotSetup<BoosterSlot, BoosterStat>
                 else DIContainer.GetModule<IBoosterManager>().SaveBoosters();
                 if (resourceManager != null) resourceManager.SaveResources();
                 else DIContainer.GetModule<IResourceManager>().SaveResources();
-                if (PopupFactory.instance != null) PopupFactory.instance.ShowPopup<BaseStat>(TypeOfPopup.ShopPopup, data);
+                if (PopupFactory.instance != null) PopupFactory.instance.ShowPopup<BaseStat>(TypeOfPopup.StoryPopup, data);
             }
             else
             {

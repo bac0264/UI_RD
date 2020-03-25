@@ -3,6 +3,7 @@ using System.Collections;
 
 public class ShopPanel : BasePanel
 {
+    public static ShopPanel instance;
     public ShopResourcePanel shopResourcePanel;
     public ShopBoosterPanel shopBoosterPanel;
     public ShopPackPanel shopPackPanel;
@@ -20,11 +21,19 @@ public class ShopPanel : BasePanel
         if (shopBoosterPanel == null) shopBoosterPanel = GetComponentInChildren<ShopBoosterPanel>();
         if (shopPackPanel == null) shopPackPanel = GetComponentInChildren<ShopPackPanel>();
     }
-
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+    }
+    public void CheckShowPacks()
+    {
+        if(shopPackPanel != null) shopPackPanel.CheckShowPacks();
+    }
     public override void ShowPanel()
     {
         SetupData();
         ResourceTag();
+        CheckShowPacks();
         base.ShowPanel();
     }
     //private void Start()

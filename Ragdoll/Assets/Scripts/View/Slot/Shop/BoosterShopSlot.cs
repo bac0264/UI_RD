@@ -50,7 +50,7 @@ public class BoosterShopSlot : BoosterSlot
             boosterManager.SaveBoosters();
             DATA = DATA;
             if (PopupFactory.instance != null) 
-                PopupFactory.instance.ShowPopup<BaseStat>(TypeOfPopup.ShopPopup, DATA);
+                PopupFactory.instance.ShowPopup<BaseStat>(TypeOfPopup.StoryPopup, DATA);
         }
     }
 }

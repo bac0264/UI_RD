@@ -6,14 +6,11 @@ public class ShopPackPanel : MonoBehaviour
     public ShopSlotList shopSlotList;
     public SO_PackShop soPackShop;
     IShopManager shopManager;
-    private void Start()
-    {
-        CheckShowPacks();
-    }
     public void CheckShowPacks()
     {
-        bool check = shopSlotList.CheckPacks(shopManager);
-        if (check) gameObject.SetActive(false);
+       // bool check = shopSlotList.CheckPacks(shopManager);
+       if(shopManager.GetDataShopList().Length == soPackShop.PackDatas.Count) gameObject.SetActive(false);
+        //if (check) gameObject.SetActive(false);
     }
     private void OnValidate()
     {

@@ -30,6 +30,7 @@ public class BacJson
         {
             T sd = JsonUtility.FromJson<T>(s[i]);
             var _temp = sd.GetType().GetField("NAME").GetValue(sd);
+           // Debug.Log(_temp+"-"+ typeof(T2).ToString());
             if (_temp.ToString().Equals(typeof(T1).ToString()))
             {
                 sd = (T)(object)JsonUtility.FromJson<T1>(s[i]);
@@ -37,9 +38,11 @@ public class BacJson
             else if (_temp.ToString().Equals(typeof(T2).ToString()))
             {
                 sd = (T)(object)JsonUtility.FromJson<T2>(s[i]);
+              //  Debug.Log(sd);
             }
             else
             {
+               // Debug.Log(sd);
             }
             game.results.Add(sd);
         }

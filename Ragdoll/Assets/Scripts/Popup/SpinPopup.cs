@@ -10,7 +10,7 @@ public class SpinPopup : BasePopup<BaseStat>
     public SkeletonAnimation effect;
     public Button X3Btn;
     public bool x3;
-
+    bool allowHiding = false;
     private void Start()
     {
         X3Btn.onClick.RemoveAllListeners();
@@ -23,10 +23,15 @@ public class SpinPopup : BasePopup<BaseStat>
     {
         if (_data != null)
         {
-            X3Btn.gameObject.SetActive(true);
             container.DATA = _data;
             container.gameObject.SetActive(false);
         }
+    }
+    public override void ShowPopup()
+    {
+        allowHiding = false;
+        X3Btn.gameObject.SetActive(false);
+        base.ShowPopup();
     }
     public override void ShowKey()
     {
@@ -34,25 +39,33 @@ public class SpinPopup : BasePopup<BaseStat>
     }
     IEnumerator showEffect()
     {
+        x3 = false;
         effect.gameObject.SetActive(true);
         effect.AnimationState.SetAnimation(0, "poster", false);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.25f);
         container.gameObject.SetActive(true);
-        yield return new WaitForSeconds(1.5f);
+        if (container.DATA is CharacterStat)
+            X3Btn.gameObject.SetActive(false);
+        else X3Btn.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.65f);
         effect.gameObject.SetActive(false);
+        x3 = true;
+        allowHiding = true;
     }
     public void X3Price()
     {
-        x3 = false;
-        int count = 1;
-        int i = 0;
-        while (i > count)
+        if (x3)
         {
-            Debug.LogError("x2");
-            i++;
-            container.DATA.AddPrice();
+            int count = 0;
+            int i = 0;
+            while (i <= count)
+            {
+                i++;
+                Debug.Log(i);
+                container.DATA.AddPrice();
+            }
+            StartCoroutine(AfterX3());
         }
-        StartCoroutine(AfterX3());
     }
     IEnumerator AfterX3()
     {
@@ -60,11 +73,19 @@ public class SpinPopup : BasePopup<BaseStat>
         effect.gameObject.SetActive(true);
         effect.AnimationState.SetAnimation(0, "poster", false);
         container.DATA.VALUE *= 3;
+        yield return new WaitForSeconds(0.5f);
         container.DATA = container.DATA;
         container.DATA.VALUE /= 3;
-        yield return new WaitForSeconds(0.2f);
-        container.gameObject.SetActive(true);
-        yield return new WaitForSeconds(1.5f);
+        if (ResourceTextManager.instance != null) ResourceTextManager.instance.UpdateAllText();
+        yield return new WaitForSeconds(0.5f);
         effect.gameObject.SetActive(false);
+    }
+    public override void HidePopup()
+    {
+        if (allowHiding)
+        {
+            if (ResourceTextManager.instance != null) ResourceTextManager.instance.UpdateAllText();
+            base.HidePopup();
+        }
     }
 }

@@ -7,17 +7,10 @@ public enum TypeOfPopup
 {
     ShopPopup,
     SpinPopup,
+    StoryPopup,
 }
 public class BasePopup<T> : BasePopupSimple
 { 
-    public override void ShowPopup()
-    {
-        gameObject.SetActive(true);
-    }
-    public override void HidePopup()
-    {
-        gameObject.SetActive(false);
-    }
     public virtual void SetupData(T _data = default,List<T> data = null, string message = null)
     {
 

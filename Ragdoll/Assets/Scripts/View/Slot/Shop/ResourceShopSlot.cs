@@ -43,7 +43,7 @@ public class ResourceShopSlot : ResourceSlot
             resourceManager.GetResourceWithID(DATA.ID).AddValue(DATA.VALUE);
             resourceManager.SaveResources();
             if (PopupFactory.instance != null)
-                PopupFactory.instance.ShowPopup<BaseStat>(TypeOfPopup.ShopPopup, DATA);
+                PopupFactory.instance.ShowPopup<BaseStat>(TypeOfPopup.StoryPopup, DATA);
         }
     }
 }

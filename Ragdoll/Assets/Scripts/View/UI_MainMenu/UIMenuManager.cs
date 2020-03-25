@@ -102,9 +102,9 @@ public class UIMenuManager : MonoBehaviour
     IEnumerator Spin()
     {
         yield return null;
-        // HideMenu();
-        // yield return new WaitUntil(() => IsHide);
-        // if (PanelFactory.instance != null) PanelFactory.instance.ShowPanel<BaseSlot, BaseStat>(PanelType.SpinPanel);
+        HideMenu();
+        yield return new WaitUntil(() => IsHide);
+        if (PanelFactory.instance != null) PanelFactory.instance.ShowPanel(PanelType.SpinPanel);
     }
     #endregion
 }

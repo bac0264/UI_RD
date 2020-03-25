@@ -53,7 +53,6 @@ public class PanelFactory : MonoBehaviour
         BasePanel panel = obj.GetComponent< BasePanel>();
         if (panel != null)
         {
-            Debug.Log(panel);
             panelList.Add(panel.panelType.ToString(), panel);
             panel.transform.SetAsLastSibling();
            // panel.Setup();

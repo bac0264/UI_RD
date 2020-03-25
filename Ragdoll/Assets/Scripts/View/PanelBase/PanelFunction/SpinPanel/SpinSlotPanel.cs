@@ -11,6 +11,7 @@ public class SpinSlotPanel : _PanelSetup<BaseSlot, BaseStat>
     public SO_Spin spin;
     public int index;
     List<DataSave<BaseStat>> spinDatas;
+    bool _spin = false;
     private void Start()
     {
         InjectData();
@@ -20,7 +21,7 @@ public class SpinSlotPanel : _PanelSetup<BaseSlot, BaseStat>
         spinDatas = new List<DataSave<BaseStat>>();
         for (int i = 0; i < spin.SpinDatas.Count; i++)
         {
-            DataSave<BaseStat> data = BacJson.FromJson<BaseStat, CharacterStat, ResourceStat>(spin.SpinDatas[i].json);
+            DataSave<BaseStat> data = BacJson.FromJson<BaseStat, CharacterStat, ResourceStat, BoosterStat>(spin.SpinDatas[i].json);
             spinDatas.Add(data);
         }
         if (spin.SpinDatas.Count > 0)
@@ -28,6 +29,11 @@ public class SpinSlotPanel : _PanelSetup<BaseSlot, BaseStat>
             index = Random.Range(0, spin.SpinDatas.Count);
             Setup(spinDatas[index].results.ToArray());
         }
+    }
+    public override void ShowPanel()
+    {
+        _spin = false;
+        base.ShowPanel();
     }
     public override void OnValidate()
     {
@@ -41,9 +47,13 @@ public class SpinSlotPanel : _PanelSetup<BaseSlot, BaseStat>
             base.Setup(spinDatas[index].results.ToArray());
         }
     }
-    public void SpinBtn()
+    public void WatchVideoToSpin()
     {
-
+        if (!_spin)
+        {
+            StartCoroutine(_SpinAnimation());
+            _spin = true;
+        }
     }
     IEnumerator _SpinAnimation()
     {
@@ -62,18 +72,19 @@ public class SpinSlotPanel : _PanelSetup<BaseSlot, BaseStat>
             flicker = SpinImage.GetComponent<Image>().DOColor(new Color(1, 1, 1, 1), 0.2f);
             yield return flicker.WaitForCompletion();
         }
-        Debug.Log(SlotListManager.slotList[random].DATA is BoosterStat);
-        Debug.Log(SlotListManager.slotList[random].DATA.ID);
-        Debug.Log(SlotListManager.slotList[random].DATA.VALUE);
         bool recieve = SlotListManager.slotList[random].DATA.AddPrice();
-        Debug.Log(recieve);
         if (recieve)
         {
             if (PopupFactory.instance != null) PopupFactory.instance.ShowPopup<BaseStat>(TypeOfPopup.SpinPopup, SlotListManager.slotList[random].DATA);
         }
+        _spin = false;
     }
     public void FreeBtn()
     {
-        StartCoroutine(_SpinAnimation());
+        if (!_spin)
+        {
+            StartCoroutine(_SpinAnimation());
+            _spin = true;
+        }
     }
 }

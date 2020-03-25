@@ -65,6 +65,7 @@ public class PackSlot : MonoBehaviour
         shopManager.SaveShops();
         if (PopupFactory.instance != null)
             PopupFactory.instance.ShowPopup<BaseStat>(TypeOfPopup.ShopPopup, null, data.results);
+        if (ShopPanel.instance != null) ShopPanel.instance.CheckShowPacks();
         gameObject.SetActive(false);
     }
 }
