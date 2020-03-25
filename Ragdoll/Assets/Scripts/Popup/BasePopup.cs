@@ -8,6 +8,8 @@ public enum TypeOfPopup
     ShopPopup,
     SpinPopup,
     StoryPopup,
+    LanguagePopup,
+    ProfilePopup,
 }
 public class BasePopup<T> : BasePopupSimple
 { 

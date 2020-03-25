@@ -3,18 +3,25 @@ using System.Collections;
 
 public class UserManager : IUserManager
 {
+    IDataService dataService;
+    UserStat userStat;
+    public UserManager(IDataService dataService)
+    {
+        this.dataService = dataService;
+        Load();
+    }
     public UserStat GetUserInfo()
     {
-        throw new System.NotImplementedException();
+        return userStat;
     }
 
     public void Load()
     {
-        throw new System.NotImplementedException();
+        userStat = dataService.GetUserInfo();
     }
 
     public void Save()
     {
-        throw new System.NotImplementedException();
+        dataService.Save<UserStat>();
     }
 }

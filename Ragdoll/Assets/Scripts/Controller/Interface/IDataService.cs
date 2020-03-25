@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public interface IDataService
 {
+    SoundMusicLanguageStat GetDataProfile();
     UserStat GetUserInfo();
     DataSave<T> GetDataSaveWithType<T>();
     void Save<T>();

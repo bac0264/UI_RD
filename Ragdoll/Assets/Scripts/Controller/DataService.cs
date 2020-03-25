@@ -12,6 +12,7 @@ public class DataService : IDataService
     DataSave<CharacterStat> CharacterStat_DataSave;
     DataSave<DataShop> DataShop_DataSave;
     UserStat DataUser;
+    SoundMusicLanguageStat DataSoundMusicLanguage;
     public DataService()
     {
         if (PlayerPrefs.GetInt("First", 0) == 0)
@@ -21,6 +22,8 @@ public class DataService : IDataService
             AddCharacters();
             AddMaps();
             AddShops();
+            AddDataUser();
+            AddSoundMusicLanguage();
             Save();
             PlayerPrefs.SetInt("First", 1);
         }
@@ -32,7 +35,7 @@ public class DataService : IDataService
     #region
     void AddDataUser()
     {
-        DataUser = new UserStat(0, "BacDzai");
+        DataUser = new UserStat(0, "BacDzai", 0);
     }
     void AddBoosters()
     {
@@ -79,6 +82,11 @@ public class DataService : IDataService
             MapDataStat_DataSave.Add(map);
         }
     }
+    void AddSoundMusicLanguage()
+    {
+        int language = (int)Application.systemLanguage;
+        DataSoundMusicLanguage = new SoundMusicLanguageStat(true, true, language);
+    }
     void AddShops()
     {
         DataShop_DataSave = new DataSave<DataShop>();
@@ -114,15 +122,18 @@ public class DataService : IDataService
     }
     void Save()
     {
+        string dataUser = JsonUtility.ToJson(DataUser);
+        string dataShop = JsonUtility.ToJson(DataShop_DataSave);
         string dataMap = JsonUtility.ToJson(MapDataStat_DataSave);
         string dataBooster = JsonUtility.ToJson(BoosterStat_DataSave);
         string dataResource = JsonUtility.ToJson(ResourceStat_DataSave);
-        string dataShop = JsonUtility.ToJson(DataShop_DataSave);
-        string dataUser = JsonUtility.ToJson(DataUser);
+        string dataProfile = JsonUtility.ToJson(DataSoundMusicLanguage);
         string dataCharacterUnlock = JsonUtility.ToJson(CharacterStat_DataSave);
+
         PlayerPrefs.SetString(KeySave.DATA_MAP, dataMap);
         PlayerPrefs.SetString(KeySave.DATA_USER, dataUser);
         PlayerPrefs.SetString(KeySave.DATA_SHOPS, dataShop);
+        PlayerPrefs.SetString(KeySave.DATA_PROFILE, dataProfile);
         PlayerPrefs.SetString(KeySave.DATA_BOOSTERS, dataBooster);
         PlayerPrefs.SetString(KeySave.DATA_RESOURCES, dataResource);
         PlayerPrefs.SetString(KeySave.DATA_CHARACTERS, dataCharacterUnlock);
@@ -134,6 +145,8 @@ public class DataService : IDataService
         else if (typeof(T).ToString().Equals(BaseStat.Type.CharacterStat.ToString())) PlayerPrefs.SetString(KeySave.DATA_CHARACTERS, JsonUtility.ToJson(CharacterStat_DataSave));
         else if (typeof(T).ToString().Equals(typeof(MapDataStat).ToString())) PlayerPrefs.SetString(KeySave.DATA_MAP, JsonUtility.ToJson(MapDataStat_DataSave));
         else if (typeof(T).ToString().Equals(typeof(DataShop).ToString())) PlayerPrefs.SetString(KeySave.DATA_SHOPS, JsonUtility.ToJson(DataShop_DataSave));
+        else if (typeof(T).ToString().Equals(typeof(SoundMusicLanguageStat).ToString())) PlayerPrefs.SetString(KeySave.DATA_PROFILE, JsonUtility.ToJson(DataSoundMusicLanguage));
+        else if (typeof(T).ToString().Equals(typeof(UserStat).ToString())) PlayerPrefs.SetString(KeySave.DATA_USER, JsonUtility.ToJson(DataUser));
     }
     public void Load()
     {
@@ -141,6 +154,7 @@ public class DataService : IDataService
         DataShop_DataSave = JsonUtility.FromJson<DataSave<DataShop>>(PlayerPrefs.GetString(KeySave.DATA_SHOPS));
         MapDataStat_DataSave = JsonUtility.FromJson<DataSave<MapDataStat>>(PlayerPrefs.GetString(KeySave.DATA_MAP));
         BoosterStat_DataSave = JsonUtility.FromJson<DataSave<BoosterStat>>(PlayerPrefs.GetString(KeySave.DATA_BOOSTERS));
+        DataSoundMusicLanguage = JsonUtility.FromJson<SoundMusicLanguageStat>(PlayerPrefs.GetString(KeySave.DATA_PROFILE));
         ResourceStat_DataSave = JsonUtility.FromJson<DataSave<ResourceStat>>(PlayerPrefs.GetString(KeySave.DATA_RESOURCES));
         CharacterStat_DataSave = JsonUtility.FromJson<DataSave<CharacterStat>>(PlayerPrefs.GetString(KeySave.DATA_CHARACTERS));
     }
@@ -148,6 +162,11 @@ public class DataService : IDataService
     public UserStat GetUserInfo()
     {
         return DataUser;
+    }
+
+    public SoundMusicLanguageStat GetDataProfile()
+    {
+        return DataSoundMusicLanguage;
     }
     //public List<T1> GetDataListWithType<T, T1>(DataSave<T> data)
     //{

@@ -268,9 +268,9 @@ public class IronSourceManager : MonoBehaviour
     }
     #endregion
 
-    public BoosterSlot boosterSlot;
-    public CharacterSlotPanel characterPanel;
-    public SpinPopup spinPopup;
+    BoosterSlot boosterSlot;
+    CharacterSlotPanel characterPanel;
+    SpinPopup spinPopup;
     [HideInInspector]
     public bool SpinReward;
     [HideInInspector]
