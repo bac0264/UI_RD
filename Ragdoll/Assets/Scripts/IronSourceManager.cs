@@ -7,7 +7,7 @@ public class IronSourceManager : MonoBehaviour
 {
     public static IronSourceManager instance;
 #if UNITY_ANDROID
-    public static string appKey = "a98a6255";
+    public static string appKey = "b9d4f345";
 #elif UNITY_IOS
     public static string appKey = "af7cb705";
 #endif
