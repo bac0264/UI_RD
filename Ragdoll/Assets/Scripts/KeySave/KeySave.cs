@@ -8,6 +8,7 @@ public class KeySave
     public const string DATA_RESOURCES = "ResourceStat";
     public const string DATA_CHARACTERS = "CharacterStat";
     public const string DATA_SHOPS = "DataShop";
+    public const string DATA_USER = "DataUser";
     //public const string IS_THE_FIRST_TIME = "IS_THE_FIRST_TIME";
     //public const string ALL_RESOURCE = "ALL_RESOURCE";
     //public const string DAILY_REWARD = "DAILY_REWARD";

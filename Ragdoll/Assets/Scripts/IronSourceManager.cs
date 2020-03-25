@@ -28,6 +28,7 @@ public class IronSourceManager : MonoBehaviour
     void Start()
     {
 
+
         Debug.Log("unity-script: MyAppStart Start called");
 
         //IronSourceConfig.Instance.setClientSideCallbacks(true);
@@ -89,18 +90,20 @@ public class IronSourceManager : MonoBehaviour
 
         // SDK init
         Debug.Log("unity-script: IronSource.Agent.init");
-        //IronSource.Agent.init (appKey, IronSourceAdUnits.REWARDED_VIDEO, IronSourceAdUnits.INTERSTITIAL, IronSourceAdUnits.OFFERWALL, IronSourceAdUnits.BANNER);
-        //IronSource.Agent.initISDemandOnly (appKey, IronSourceAdUnits.REWARDED_VIDEO, IronSourceAdUnits.INTERSTITIAL);
+        IronSource.Agent.init(appKey);
+        IronSource.Agent.setAdaptersDebug(true);
+        IronSource.Agent.validateIntegration();
 
+        //IronSource.Agent.loadInterstitial();
+        //IronSource.Agent.init(appKey, IronSourceAdUnits.REWARDED_VIDEO, IronSourceAdUnits.INTERSTITIAL, IronSourceAdUnits.OFFERWALL, IronSourceAdUnits.BANNER);
+        //IronSource.Agent.initISDemandOnly(appKey, IronSourceAdUnits.REWARDED_VIDEO, IronSourceAdUnits.INTERSTITIAL);
         //Set User ID For Server To Server Integration
         //// IronSource.Agent.setUserId ("UserId");
 
         // Load Banner example
-        //IronSource.Agent.loadBanner(IronSourceBannerSize.BANNER, IronSourceBannerPosition.TOP);
-        IronSource.Agent.init(appKey);
-        //IronSource.Agent.loadBanner(IronSourceBannerSize.BANNER, IronSourceBannerPosition.TOP);
+        LoadBanner();
+        HideBanner();
         LoadInterstitial();
-        // ShowBanner();
     }
 
     void OnApplicationPause(bool isPaused)
@@ -155,7 +158,10 @@ public class IronSourceManager : MonoBehaviour
     {
         Debug.Log("unity-script: I got BannerAdLeftApplicationEvent");
     }
-
+    public void LoadBanner()
+    {
+        IronSource.Agent.loadBanner(IronSourceBannerSize.BANNER, IronSourceBannerPosition.TOP);
+    }
     /************* Interstitial API *************/
     public void LoadInterstitial()
     {

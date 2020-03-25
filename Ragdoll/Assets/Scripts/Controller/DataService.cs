@@ -11,7 +11,7 @@ public class DataService : IDataService
     DataSave<ResourceStat> ResourceStat_DataSave;
     DataSave<CharacterStat> CharacterStat_DataSave;
     DataSave<DataShop> DataShop_DataSave;
-
+    UserStat DataUser;
     public DataService()
     {
         if (PlayerPrefs.GetInt("First", 0) == 0)
@@ -27,8 +27,13 @@ public class DataService : IDataService
         else
             Load();
     }
+
     // For the first
     #region
+    void AddDataUser()
+    {
+        DataUser = new UserStat(0, "BacDzai");
+    }
     void AddBoosters()
     {
         BoosterStat_DataSave = new DataSave<BoosterStat>();
@@ -113,8 +118,10 @@ public class DataService : IDataService
         string dataBooster = JsonUtility.ToJson(BoosterStat_DataSave);
         string dataResource = JsonUtility.ToJson(ResourceStat_DataSave);
         string dataShop = JsonUtility.ToJson(DataShop_DataSave);
+        string dataUser = JsonUtility.ToJson(DataUser);
         string dataCharacterUnlock = JsonUtility.ToJson(CharacterStat_DataSave);
         PlayerPrefs.SetString(KeySave.DATA_MAP, dataMap);
+        PlayerPrefs.SetString(KeySave.DATA_USER, dataUser);
         PlayerPrefs.SetString(KeySave.DATA_SHOPS, dataShop);
         PlayerPrefs.SetString(KeySave.DATA_BOOSTERS, dataBooster);
         PlayerPrefs.SetString(KeySave.DATA_RESOURCES, dataResource);
@@ -130,11 +137,17 @@ public class DataService : IDataService
     }
     public void Load()
     {
+        DataUser = JsonUtility.FromJson<UserStat>(PlayerPrefs.GetString(KeySave.DATA_USER));
         DataShop_DataSave = JsonUtility.FromJson<DataSave<DataShop>>(PlayerPrefs.GetString(KeySave.DATA_SHOPS));
         MapDataStat_DataSave = JsonUtility.FromJson<DataSave<MapDataStat>>(PlayerPrefs.GetString(KeySave.DATA_MAP));
         BoosterStat_DataSave = JsonUtility.FromJson<DataSave<BoosterStat>>(PlayerPrefs.GetString(KeySave.DATA_BOOSTERS));
         ResourceStat_DataSave = JsonUtility.FromJson<DataSave<ResourceStat>>(PlayerPrefs.GetString(KeySave.DATA_RESOURCES));
         CharacterStat_DataSave = JsonUtility.FromJson<DataSave<CharacterStat>>(PlayerPrefs.GetString(KeySave.DATA_CHARACTERS));
+    }
+
+    public UserStat GetUserInfo()
+    {
+        return DataUser;
     }
     //public List<T1> GetDataListWithType<T, T1>(DataSave<T> data)
     //{
