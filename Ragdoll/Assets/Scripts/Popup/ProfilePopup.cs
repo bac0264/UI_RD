@@ -25,6 +25,7 @@ public class ProfilePopup : BasePopup<UserSlot>
         container.IMG_BG.sprite = _data.IMG_BG.sprite;
         container.IMG_ICON.sprite = _data.IMG_ICON.sprite;
         container.NAME.text = _data.NAME.text;
+        container.LEVEL.text = "69";
     }
     public void LanguageBtn()
     {

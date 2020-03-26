@@ -28,7 +28,6 @@ public class UserPanel : MonoBehaviour
         if(userSlot is UserSlot)
         {
             UserSlot slot = userSlot as UserSlot;
-            Debug.Log("run");
             slot.ShowProfile();
         }
     }
