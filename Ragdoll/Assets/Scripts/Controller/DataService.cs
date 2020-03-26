@@ -6,26 +6,26 @@ using System;
 
 public class DataService : IDataService
 {
+    UserStat DataUser;
+    DataSave<DataShop> DataShop_DataSave;
     DataSave<BoosterStat> BoosterStat_DataSave;
     DataSave<MapDataStat> MapDataStat_DataSave;
     DataSave<ResourceStat> ResourceStat_DataSave;
     DataSave<CharacterStat> CharacterStat_DataSave;
-    DataSave<DataShop> DataShop_DataSave;
-    UserStat DataUser;
     SoundMusicLanguageStat DataSoundMusicLanguage;
     public DataService()
     {
         if (PlayerPrefs.GetInt("First", 0) == 0)
         {
+            PlayerPrefs.SetInt("First", 1);
+            AddSoundMusicLanguage();
+            AddCharacters();
             AddResources();
             AddBoosters();
-            AddCharacters();
-            AddMaps();
-            AddShops();
             AddDataUser();
-            AddSoundMusicLanguage();
+            AddShops();
+            AddMaps();
             Save();
-            PlayerPrefs.SetInt("First", 1);
         }
         else
             Load();
@@ -113,11 +113,11 @@ public class DataService : IDataService
     #endregion
     public DataSave<T> GetDataSaveWithType<T>()
     {
-        if (typeof(T).ToString().Equals(BaseStat.Type.BoosterStat.ToString())) return (DataSave<T>)(object)BoosterStat_DataSave;
+        if (typeof(T).ToString().Equals(typeof(DataShop).ToString())) return (DataSave<T>)(object)DataShop_DataSave;
+        else if (typeof(T).ToString().Equals(typeof(MapDataStat).ToString())) return (DataSave<T>)(object)MapDataStat_DataSave;
+        else if (typeof(T).ToString().Equals(BaseStat.Type.BoosterStat.ToString())) return (DataSave<T>)(object)BoosterStat_DataSave;
         else if (typeof(T).ToString().Equals(BaseStat.Type.ResourceStat.ToString())) return (DataSave<T>)(object)ResourceStat_DataSave;
         else if (typeof(T).ToString().Equals(BaseStat.Type.CharacterStat.ToString())) return (DataSave<T>)(object)CharacterStat_DataSave;
-        else if (typeof(T).ToString().Equals(typeof(MapDataStat).ToString())) return (DataSave<T>)(object)MapDataStat_DataSave;
-        else if (typeof(T).ToString().Equals(typeof(DataShop).ToString())) return (DataSave<T>)(object)DataShop_DataSave;
         return null;
     }
     void Save()
@@ -140,13 +140,13 @@ public class DataService : IDataService
     }
     public void Save<T>()
     {
-        if (typeof(T).ToString().Equals(BaseStat.Type.BoosterStat.ToString())) PlayerPrefs.SetString(KeySave.DATA_BOOSTERS, JsonUtility.ToJson(BoosterStat_DataSave));
+        if (typeof(T).ToString().Equals(typeof(UserStat).ToString())) PlayerPrefs.SetString(KeySave.DATA_USER, JsonUtility.ToJson(DataUser));
+        else if (typeof(T).ToString().Equals(typeof(DataShop).ToString())) PlayerPrefs.SetString(KeySave.DATA_SHOPS, JsonUtility.ToJson(DataShop_DataSave));
+        else if (typeof(T).ToString().Equals(typeof(MapDataStat).ToString())) PlayerPrefs.SetString(KeySave.DATA_MAP, JsonUtility.ToJson(MapDataStat_DataSave));
+        else if (typeof(T).ToString().Equals(BaseStat.Type.BoosterStat.ToString())) PlayerPrefs.SetString(KeySave.DATA_BOOSTERS, JsonUtility.ToJson(BoosterStat_DataSave));
         else if (typeof(T).ToString().Equals(BaseStat.Type.ResourceStat.ToString())) PlayerPrefs.SetString(KeySave.DATA_RESOURCES, JsonUtility.ToJson(ResourceStat_DataSave));
         else if (typeof(T).ToString().Equals(BaseStat.Type.CharacterStat.ToString())) PlayerPrefs.SetString(KeySave.DATA_CHARACTERS, JsonUtility.ToJson(CharacterStat_DataSave));
-        else if (typeof(T).ToString().Equals(typeof(MapDataStat).ToString())) PlayerPrefs.SetString(KeySave.DATA_MAP, JsonUtility.ToJson(MapDataStat_DataSave));
-        else if (typeof(T).ToString().Equals(typeof(DataShop).ToString())) PlayerPrefs.SetString(KeySave.DATA_SHOPS, JsonUtility.ToJson(DataShop_DataSave));
         else if (typeof(T).ToString().Equals(typeof(SoundMusicLanguageStat).ToString())) PlayerPrefs.SetString(KeySave.DATA_PROFILE, JsonUtility.ToJson(DataSoundMusicLanguage));
-        else if (typeof(T).ToString().Equals(typeof(UserStat).ToString())) PlayerPrefs.SetString(KeySave.DATA_USER, JsonUtility.ToJson(DataUser));
     }
     public void Load()
     {
