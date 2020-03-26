@@ -18,6 +18,8 @@ public class ProfilePopup : BasePopup<UserSlot>
     {
         profileManager = DIContainer.GetModule<IProfileManager>();
         dataProfile = profileManager.GetDataProfile();
+        Debug.Log(dataProfile);
+        Debug.Log(dataProfile.LANGUAGE);
         soundMusic.ShowSoundAndMusic(profileManager);
     }
     public override void SetupData(UserSlot _data = null, List<UserSlot> data = null, string message = null)

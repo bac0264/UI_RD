@@ -7,6 +7,7 @@ public class LanguageSlot : MonoBehaviour
 {
     public int ID;
     public Button pick;
+    public Text Language;
     public SoundMusicLanguageStat data;
     public LanguagePopup popup;
     private void Start()

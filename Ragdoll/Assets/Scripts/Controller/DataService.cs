@@ -84,7 +84,7 @@ public class DataService : IDataService
     }
     void AddSoundMusicLanguage()
     {
-        int language = (int)Application.systemLanguage;
+        int language = 2;  /*(int)Application.systemLanguage;*/
         DataSoundMusicLanguage = new SoundMusicLanguageStat(true, true, language);
     }
     void AddShops()
